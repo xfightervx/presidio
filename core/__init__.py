@@ -1,0 +1,1 @@
+from .logic import get_analyzer

@@ -1,0 +1,91 @@
+[
+  {
+    "text": "The patient has blood type AB+ and their IBAN is MA64011519000001205000534921.",
+    "entities": [
+      { "entity_type": "BLOOD_TYPE", "start": 27, "end": 30 },
+      { "entity_type": "MIBAN_CODE", "start": 49, "end": 77 }
+    ]
+  },
+  {
+    "text": "She has been diagnosed with type 2 diabetes.",
+    "entities": [
+      { "entity_type": "MEDICAL_CONDITION", "start": 35, "end": 43 },
+      { "entity_type": "IMPLIED_GENDER", "start": 0, "end": 3 }
+    ]
+  },
+  {
+    "text": "He works as a software engineer in a tech company",
+    "entities": [
+      { "entity_type": "JOB_TITLE", "start": 14, "end": 31 },
+      { "entity_type": "IMPLIED_GENDER", "start": 0, "end": 2 }
+    ]
+  },
+  {
+    "text": "Insurance policy number: CNOPS-88220",
+    "entities": [
+      { "entity_type": "INSURANCE_NUMBER", "start": 25, "end": 36 }
+    ]
+  },
+  {
+    "text": "The patient suffers from chronic kidney disease.",
+    "entities": [
+      { "entity_type": "MEDICAL_CONDITION", "start": 33, "end": 39 },
+      { "entity_type": "MEDICAL_CONDITION", "start": 40, "end": 47 }
+    ]
+  },
+  {
+    "text": "Driver's license number: 01/0832983",
+    "entities": [
+      { "entity_type": "DRIVER_LICENSE", "start": 25, "end": 35 }
+    ]
+  },
+  {
+    "text": "His salary is 12000 MAD per month.",
+    "entities": [
+      { "entity_type": "INCOME_AMOUNT", "start": 13, "end": 23 },
+      { "entity_type": "IMPLIED_GENDER", "start": 0, "end": 3 }
+    ]
+  },
+  {
+    "text": "Gender: Male",
+    "entities": [
+      { "entity_type": "GENDER_DECLARED", "start": 8, "end": 12 }
+    ]
+  },
+  {
+    "text": "Passport number: B1234567",
+    "entities": [
+      { "entity_type": "PASSPORT", "start": 17, "end": 25 }
+    ]
+  },
+  {
+    "text": "Employee internal ID is EMP-58329",
+    "entities": [
+      { "entity_type": "INTERNAL_ID", "start": 24, "end": 33 }
+    ]
+  },
+  {
+    "text": "The postal code is 11223.",
+    "entities": [
+      { "entity_type": "POSTAL_CODE", "start": 19, "end": 24 }
+    ]
+  },
+  {
+    "text": "Credit card number: 4111 1111 1111 1111",
+    "entities": [
+      { "entity_type": "CREDIT_CARD", "start": 20, "end": 39 }
+    ]
+  },
+  {
+    "text": "Contact number is +212612345678",
+    "entities": [
+      { "entity_type": "PHONE_NUMBER", "start": 18, "end": 31 }
+    ]
+  },
+  {
+    "text": "Email: john.doe@example.com",
+    "entities": [
+      { "entity_type": "EMAIL_ADDRESS", "start": 7, "end": 27 }
+    ]
+  }
+]
