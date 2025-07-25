@@ -1,0 +1,18 @@
+{
+  "EMAIL_ADDRESS": "Personal Data",
+  "PHONE_NUMBER": "Personal Data",
+  "PERSON": "Personal Data",
+  "GENDER_DECLARED": "Sensitive Data",
+  "IMPLIED_GENDER": "Sensitive Data",
+  "BLOOD_TYPE": "Sensitive Data",
+  "MEDICAL_CONDITION": "Sensitive Data",
+  "INCOME_AMOUNT": "Financial Data",
+  "CREDIT_CARD": "Financial Data",
+  "MIBAN_CODE": "Financial Data",
+  "INSURANCE_NUMBER": "Identifiers",
+  "DRIVER_LICENSE": "Identifiers",
+  "INTERNAL_ID": "Identifiers",
+  "POSTAL_CODE": "Identifiers",
+  "PASSPORT": "Identifiers",
+  "JOB_TITLE": "Organizational Data"
+}

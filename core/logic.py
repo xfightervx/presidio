@@ -367,3 +367,5 @@ def get_analyzer():
     ))
     
     return analyzer
+
+analyzer = get_analyzer()

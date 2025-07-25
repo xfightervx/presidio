@@ -1,0 +1,1329 @@
+text_id,text,PERSON,ID_MAROC,PHONE_NUMBER,EMAIL_ADDRESS,IBAN_CODE,DATE_TIME,LOCATION
+1,"Contrat de location :
+- Locataire : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 62, avenue <Personal Data>, <Uncategorized> <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212637506497,<EMAIL_ADDRESS>,,,<LOCATION>
+2,"Contrat de location :
+- Locataire : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 96, <Uncategorized>, 06823 De Sousa-sur-Chevalier
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212613130719,<EMAIL_ADDRESS>,,,<LOCATION>
+3,"Transaction #772013:
+- Client : <Personal Data> : 1220 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+4,"Transaction #578241:
+- Client : <Personal Data> : 6644 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+5,"Transaction #294251:
+- Client : <Personal Data>
+- Montant : 3287 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,9344897357,,<Uncategorized>,<DATE_TIME>,
+6,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 34, rue de Bousquet, 78127 <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+7,"Contrat de location :
+- Locataire : Emmanuelle Le Navarro
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : <Uncategorized>, 53373 Delmas-sur-Roger
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212625714059,<EMAIL_ADDRESS>,,,<LOCATION>
+8,"Contrat de location :
+- <Personal Data> : <Personal Data> CIN : <Uncategorized>
+- Téléphone : <Uncategorized>
+- Adresse : 347, <Uncategorized>, 27295 Faivre-la-Forêt
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,<Uncategorized>,<EMAIL_ADDRESS>,,,<LOCATION>
+9,"Contrat de location :
+- <Personal Data> : <Personal Data> CIN : <Uncategorized>
+- Téléphone : <Uncategorized>
+- Adresse : 11, <Personal Data>, 64638 LeclercqVille
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212667013524,<EMAIL_ADDRESS>,,,<LOCATION>
+10,"Document d'identité :
+- Nom : <Personal Data> du Huet
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : chemin <Personal Data>, 74739 HernandezBourg",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+11,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : +212683670355
+- Adresse : 174, rue Sauvage, 28919 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212683670355,<EMAIL_ADDRESS>,,,<LOCATION>
+12,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 332, rue <Personal Data>, <Uncategorized> Lesage",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+13,"Transaction #440293:
+- Client : <Personal Data> : 974 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,1558293243,,<Uncategorized>,<DATE_TIME>,
+14,"Transaction #335654:
+- Client : <Personal Data>
+- Montant : 4658 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+15,"Document d'identité :
+- Nom : Frédérique Le Hubert
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 4, <Personal Data>, <Uncategorized> Saint Rogerboeuf",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+16,"<Personal Data> :
+Objet : Facture #126077
+<Personal Data>, votre paiement par carte Diners Club / Carte Blanche terminée par 5709 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+17,"Document d'identité :
+- Nom : <Personal Data> <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 49, boulevard de Barthelemy, <Uncategorized> <Uncategorized>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+18,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 310, avenue de Carre, 67492 Baron-sur-Bruneau",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+19,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : boulevard <Personal Data>, 67562 Nguyendan
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212604579531,<EMAIL_ADDRESS>,,,<LOCATION>
+20,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 48, avenue <Personal Data>, <Uncategorized> <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+21,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 85, chemin <Personal Data>, <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+22,"Transaction #144002:
+- Client : <Personal Data>
+- Montant : 8771 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+23,"Contrat de location :
+- <Personal Data> : Vincent-Émile <Personal Data> CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 69, chemin <Uncategorized>, 22950 LopesBourg
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212664134136,<EMAIL_ADDRESS>,,,<LOCATION>
+24,"Transaction #681581:
+- Client : <Personal Data>
+- Montant : 9111 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,4417847491,,<Uncategorized>,<DATE_TIME>,
+25,"<Personal Data> :
+Objet : Facture #18736
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par 3201 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+26,"Transaction #554979:
+- Client : <Personal Data> : 776 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,2144744854,,<Uncategorized>,<DATE_TIME>,
+27,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 29, rue <Personal Data>, 19711 PelletierVille
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212611521253,<EMAIL_ADDRESS>,,,<LOCATION>
+28,"Contrat de location :
+- Locataire : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 96, boulevard Andre, <Uncategorized> Bouvier
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212607748830,<EMAIL_ADDRESS>,,,<LOCATION>
+29,"<Personal Data>
+Objet : Facture #232254
+<Personal Data>, votre paiement par carte Diners Club / Carte Blanche terminée par 3498 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+30,"Document d'identité :
+- Nom : Léon Blondel
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : boulevard <Personal Data>, 31709 DuhamelBourg",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+31,"<Personal Data> :
+Objet : Facture #356677
+<Personal Data> Lenoir, votre paiement par carte Discover terminée par 4669 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+32,"Document d'identité :
+- Nom : Élise Le Fontaine
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 11, avenue de Godard, <Uncategorized> Roux",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+33,"Transaction #188554:
+- Client : <Personal Data> : 9940 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+34,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 51, boulevard Clémence Léger, 51670 Muller-sur-Munoz",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+35,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 69, avenue <Personal Data>, 39595 Gilbert",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+36,"Contrat de location :
+- <Personal Data> : <Personal Data> CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 46, avenue <Personal Data>, 53877 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,<Uncategorized>,<EMAIL_ADDRESS>,,,<LOCATION>
+37,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 35, <Uncategorized>, 94463 <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+38,"<Personal Data> :
+Objet : Facture #68867
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par 3176 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+39,"<Personal Data> :
+Objet : Facture #608958
+<Personal Data>, votre paiement par carte American Express terminée par 6344 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+40,"Transaction #249196:
+- Client : <Personal Data> : 2490 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+41,"Contrat de location :
+- Locataire : Thérèse-Laetitia Jacques
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 88, boulevard <Personal Data>, 83140 <Uncategorized>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212680183938,<EMAIL_ADDRESS>,,,<LOCATION>
+42,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 2, chemin <Personal Data>, 32808 Maillet-sur-Leduc",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+43,"Contrat de location :
+- <Personal Data> : <Personal Data> CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : boulevard de Bousquet, 94483 <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212608219615,<EMAIL_ADDRESS>,,,<LOCATION>
+44,"<Personal Data> SARL :
+Objet : Facture #971551
+<Personal Data>, votre paiement par carte Discover terminée par 5984 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+45,"<Personal Data> :
+Objet : Facture #824880
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par 2151 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+46,"<Personal Data> :
+Objet : Facture #523644
+<Uncategorized>, votre paiement par carte Mastercard terminée par 2602 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+47,"<Personal Data> :
+Objet : Facture #352821
+<Personal Data>, votre paiement par carte Discover terminée par 8721 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+48,"<Personal Data> :
+Objet : Facture #772728
+Bonjour Christelle Laurent, votre paiement par carte Maestro terminée par <Uncategorized> a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+49,"Transaction #825641:
+- Client : <Personal Data> : 5224 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+50,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : rue <Personal Data>, <Uncategorized> Petitjean",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+51,"Document d'identité :
+- Nom : Étienne Le Maillot
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 3, boulevard <Personal Data>, <Uncategorized> Vallet",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+52,"Document d'identité :
+- Nom : Cécile Le Lucas
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 3, rue Claude Collet, <Uncategorized> Grondin-les-Bains",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+53,"Contrat de location :
+- Locataire : <Personal Data> CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 56, rue de Faure, <Uncategorized> <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212688659133,<EMAIL_ADDRESS>,,,<LOCATION>
+54,"<Personal Data> :
+Objet : Facture #839170
+<Personal Data>, votre paiement par carte Mastercard terminée par 6913 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+55,"Transaction #168260:
+- Client : <Personal Data>
+- Montant : 3352 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+56,"Document d'identité :
+- Nom : Éric-Frédéric Lemonnier
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 14, avenue de Tanguy, 73218 Boutin",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+57,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 43, avenue Océane Raynaud, <Uncategorized> <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212631132350,<EMAIL_ADDRESS>,,,<LOCATION>
+58,"Transaction #415082:
+- Client : <Personal Data> : 5238 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,8547427947,,<Uncategorized>,<DATE_TIME>,
+59,"<Personal Data> :
+Objet : Facture #574041
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par 6057 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+60,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 7, rue de Lelièvre, 94391 <Uncategorized>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+61,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 217, avenue Leroy, 90184 <Uncategorized>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212688541866,<EMAIL_ADDRESS>,,,<LOCATION>
+62,"<Personal Data> :
+Objet : Facture #91720
+<Personal Data>, votre paiement par carte American Express terminée par 3515 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+63,"Transaction #5219:
+- Client : <Personal Data>
+- Montant : <Uncategorized> MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,2454514792,,<Uncategorized>,<DATE_TIME>,
+64,"Contrat de location :
+- <Personal Data> : Eugène Gonzalez du <Uncategorized>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 53, rue <Personal Data>, <Uncategorized> Traore-sur-Mer
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,<Personal Data>,<EMAIL_ADDRESS>,,,<LOCATION>
+65,"<Personal Data>
+Objet : Facture #857663
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par 9881 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+66,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 69, <Personal Data>, 85792 <Uncategorized>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+67,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 66, boulevard <Personal Data>, 04461 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212655829477,<EMAIL_ADDRESS>,,,<LOCATION>
+68,"Document d'identité :
+- Nom : Michèle Le Launay
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 9, boulevard Evrard, 06777 Brunet",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+69,"<Personal Data> :
+Objet : Facture #563323
+<Personal Data>, votre paiement par carte VISA 13 digit terminée par 4450 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+70,"<Personal Data> :
+Objet : Facture #726864
+<Personal Data>, votre paiement par carte Discover terminée par 6003 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+71,"<Personal Data> :
+Objet : Facture #564337
+<Personal Data>, votre paiement par carte VISA 19 digit terminée par 7827 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+72,"Contrat de location :
+- Locataire : <Personal Data> Morvan
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 72, boulevard Dupré, 45714 Langlois-sur-Bailly
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212619963833,<EMAIL_ADDRESS>,,,<LOCATION>
+73,"Transaction #44664:
+- Client : <Personal Data>
+- Montant : 3489 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+74,"<Personal Data>
+Objet : Facture #587640
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par 4443 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+75,"Document d'identité :
+- Nom : Éléonore Martinez
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 26, rue <Personal Data>, <Uncategorized> Joseph",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+76,"Contrat de location :
+- <Personal Data> : <Personal Data> CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 26, chemin <Personal Data>, 91418 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212687425178,<EMAIL_ADDRESS>,,,<LOCATION>
+77,"Document d'identité :
+- Nom : Isabelle Parent
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 18, chemin <Personal Data>, 24907 Saint Danielle",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+78,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 63, rue <Personal Data>, <Uncategorized> <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+79,"Transaction #424336:
+- Client : <Personal Data>
+- Montant : 7343 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,3915448217,,<Uncategorized>,<DATE_TIME>,
+80,"Transaction #87657:
+- Client : <Personal Data> : 5051 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+81,"Document d'identité :
+- Nom : <Personal Data> : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 8, rue Ledoux, <Uncategorized> Bonneaudan",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+82,"Transaction #672068:
+- Client : <Personal Data> <Personal Data> : 1359 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,2772460501,,<Uncategorized>,<DATE_TIME>,
+83,"Transaction #495924:
+- Client : <Personal Data>
+- Montant : 9438 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,1494561730,,<Uncategorized>,<DATE_TIME>,
+84,"Transaction #472502:
+- Client : <Personal Data> : <Uncategorized> MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+85,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 608, rue Nguyen, <Uncategorized> Laporte
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212633647626,<EMAIL_ADDRESS>,,,<LOCATION>
+86,"<Personal Data> :
+Objet : Facture #904846
+<Personal Data>, votre paiement par carte VISA 13 digit terminée par 8938 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+87,"<Personal Data> :
+Objet : Facture #51820
+<Personal Data>, votre paiement par carte JCB 15 digit terminée par <Uncategorized> a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+88,"Transaction #783282:
+- Client : <Personal Data> : 5407 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,9719065054,,<Uncategorized>,<DATE_TIME>,
+89,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 17, rue <Personal Data>, <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+90,"<Personal Data> :
+Objet : Facture #916411
+<Personal Data>, votre paiement par carte VISA 13 digit terminée par 4047 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+91,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 34, rue <Personal Data>, 88629 <Personal Data> Email : <Personal Data>",<PERSON>,<Uncategorized>,+212641151569,<EMAIL_ADDRESS>,,,<LOCATION>
+92,"Document d'identité :
+- Nom : Théodore Bernard
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 4, rue Louis, <Uncategorized> Rouxboeuf",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+93,"<Personal Data> S.A.R.L. :
+Objet : Facture #74060
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par 7396 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+94,"<Personal Data> :
+Objet : Facture #382805
+<Personal Data>, votre paiement par carte American Express terminée par 7017 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+95,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 3, rue Juliette Blondel, 40614 Royer-les-Bains",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+96,"Transaction #245090:
+- Client : <Personal Data>
+- Montant : 7494 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+97,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 3, avenue de Gomez, <Uncategorized> Sainte Hortenseboeuf
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212620985867,<EMAIL_ADDRESS>,,,<LOCATION>
+98,"Transaction #240297:
+- Client : <Personal Data>
+- Montant : 5295 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,0739847866,,<Uncategorized>,<DATE_TIME>,
+99,"<Personal Data> :
+Objet : Facture #224519
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par <Uncategorized> a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+100,"Transaction #861713:
+- Client : <Personal Data> : 9133 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,0727612455,,<Uncategorized>,<DATE_TIME>,
+101,"Contrat de location :
+- Locataire : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 89, chemin <Personal Data>, <Uncategorized> Peron-sur-Mer
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212613826498,<EMAIL_ADDRESS>,,,<LOCATION>
+102,"Transaction #399903:
+- Client : <Personal Data> : 6979 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,3294975455,,<Uncategorized>,<DATE_TIME>,
+103,"Transaction #418089:
+- Client : <Personal Data> : 6611 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+104,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 616, rue de Masse, <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+105,"<Personal Data> :
+Objet : Facture #238785
+<Personal Data>, votre paiement par carte VISA 13 digit terminée par 8539 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+106,"Transaction #566517:
+- Client : <Personal Data>
+- Montant : 8592 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+107,"<Personal Data>Objet : Facture #353346
+<Personal Data>, votre paiement par carte Maestro terminée par 1592 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+108,"Contrat de location :
+- <Personal Data> : <Personal Data> : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 97, rue <Personal Data>, <Uncategorized> Saint Sylvie
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212698695090,<EMAIL_ADDRESS>,,,<LOCATION>
+109,"<Personal Data> :
+Objet : Facture #133952
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par 1214 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+110,"<Personal Data> :
+Objet : Facture #50269
+<Personal Data>, votre paiement par carte JCB 15 digit terminée par 2100 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+111,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 1, chemin de Bazin, 07477 Rousset-sur-Maillet",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+112,"Contrat de location :
+- Locataire : Véronique Albert de la Bonnin
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 14, rue <Personal Data>, 76388 Chevalier
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212671918416,<EMAIL_ADDRESS>,,,<LOCATION>
+113,"<Personal Data> :
+Objet : Facture #621484
+<Personal Data>, votre paiement par carte VISA 19 digit terminée par 5472 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+114,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : chemin <Personal Data>, 25105 Dupuis",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+115,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 264, <Uncategorized>, 21610 Saint <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212614249961,<EMAIL_ADDRESS>,,,<LOCATION>
+116,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 243, chemin <Personal Data>, 39565 <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+117,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 215, chemin Vaillant, 59103 <Uncategorized>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+118,"<Personal Data> :
+Objet : Facture #39704
+<Personal Data> Bigot-Coulon, votre paiement par carte JCB 15 digit terminée par 4952 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+119,"Contrat de location :
+- <Personal Data> : <Personal Data> CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 33, boulevard <Personal Data>, <Uncategorized> <Personal Data> : <Personal Data>",<PERSON>,<Personal Data>,+212682879345,<EMAIL_ADDRESS>,,,<LOCATION>
+120,"Contrat de location :
+- <Personal Data> : <Personal Data> : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 365, rue <Personal Data>, 33955 DufourBourg
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212614252223,<EMAIL_ADDRESS>,,,<LOCATION>
+121,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 11, chemin <Personal Data>, 14823 Laporte",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+122,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 10, rue de Huet, <Uncategorized> Poulain",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+123,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 8, avenue de Petit, <Uncategorized> <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212638930417,<EMAIL_ADDRESS>,,,<LOCATION>
+124,"Transaction #334211:
+- Client : <Uncategorized>-Madeleine Ruiz
+- Montant : 5108 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+125,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 657, chemin de Pascal, <Uncategorized> <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+126,"Transaction #932142:
+- Client : <Personal Data> : 758 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+127,"Contrat de location :
+- <Personal Data> : <Personal Data> : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : <Personal Data>, 71967 Besson-la-Forêt
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212614918747,<EMAIL_ADDRESS>,,,<LOCATION>
+128,"<Personal Data> :
+Objet : Facture #12353
+<Personal Data>, votre paiement par carte VISA 19 digit terminée par 4977 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+129,"<Personal Data> :
+Objet : Facture #75180
+Bonjour <Personal Data>, votre paiement par carte Maestro terminée par 4157 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+130,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : boulevard de Bruneau, 22777 Baron",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+131,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 12, rue Marin, 23411 Rémy",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+132,"Document d'identité :
+- Nom : Thérèse Petit-Diallo
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 29, avenue de Simon, 15462 Caron",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+133,"Transaction #53656:
+- Client : <Personal Data>
+- Montant : 3392 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,2165544700,,<Uncategorized>,<DATE_TIME>,
+134,"<Personal Data> :
+Objet : Facture #299342
+<Personal Data>, votre paiement par carte VISA 19 digit terminée par 6771 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+135,"Transaction #453774:
+- Client : <Personal Data> : 9855 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,0388356267,,<Uncategorized>,<DATE_TIME>,
+136,"<Personal Data> :
+Objet : Facture #5816
+<Personal Data>, votre paiement par carte Mastercard terminée par 3247 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+137,"<Personal Data> :
+Objet : Facture #928498
+<Personal Data>, votre paiement par carte Diners Club / Carte Blanche terminée par 0463 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+138,"Contrat de location :
+- Locataire : <Personal Data> : <Personal Data> Téléphone : <Personal Data>
+- Adresse : 46, chemin Blot, 21132 Cousin
+- Email : <Personal Data>",<PERSON>,<Personal Data>,+212664022797,<EMAIL_ADDRESS>,,,<LOCATION>
+139,"Transaction #756777:
+- Client : <Personal Data> : 9778 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+140,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 54, boulevard <Personal Data>, 93744 Lévêque-les-Bains
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212618631116,<EMAIL_ADDRESS>,,,<LOCATION>
+141,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 26, <Uncategorized>, <Uncategorized> Sainte Isabelle
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212642153534,<EMAIL_ADDRESS>,,,<LOCATION>
+142,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 2, chemin <Personal Data>, 76275 Sainte Suzanne",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+143,"<Personal Data> :
+Objet : Facture #378930
+<Personal Data>, votre paiement par carte JCB 15 digit terminée par 5823 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+144,"Transaction #421366:
+- Client : <Personal Data>
+- Montant : 1571 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+145,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : rue <Personal Data>, <Uncategorized> Delattre-sur-Colin",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+146,"<Personal Data> :
+Objet : Facture #509511
+<Personal Data>, votre paiement par carte VISA 19 digit terminée par 1146 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+147,"<Personal Data> :
+Objet : Facture #954509
+<Personal Data>, votre paiement par carte JCB 15 digit terminée par 3365 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+148,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 606, chemin Courtois, <Uncategorized> <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+149,"Transaction #518484:
+- Client : <Personal Data> : 3036 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+150,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : chemin <Personal Data>, <Uncategorized>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+151,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : chemin <Personal Data>, <Uncategorized> Sainte Émile",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+152,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : rue Aimé Michel, <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+153,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 19, boulevard Delorme, 32803 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Personal Data>,+212612853458,<EMAIL_ADDRESS>,,,<LOCATION>
+154,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 822, rue Jourdan, <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+155,"Contrat de location :
+- Locataire : Émile-Luc Chauveau
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 499, boulevard <Personal Data>, <Uncategorized> <Personal Data> : <Personal Data>",<PERSON>,<Personal Data>,+212645321480,<EMAIL_ADDRESS>,,,<LOCATION>
+156,"Contrat de location :
+- Locataire : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 36, avenue <Personal Data>, <Uncategorized> <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212604704073,<EMAIL_ADDRESS>,,,<LOCATION>
+157,"Contrat de location :
+- Locataire : Benoît du Toussaint
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 489, chemin <Personal Data>, 60169 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212613449432,<EMAIL_ADDRESS>,,,<LOCATION>
+158,"<Personal Data>
+Objet : Facture #213251
+<Personal Data>, votre paiement par carte Discover terminée par 6560 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+159,"Document d'identité :
+- Nom : Élodie-Alex Martins
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 35, chemin <Personal Data>, 97425 GimenezBourg",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+160,"<Personal Data> :
+Objet : Facture #540052
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par 3768 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+161,"<Personal Data> S.A.R.L. :
+Objet : Facture #936080
+<Personal Data>, votre paiement par carte Discover terminée par 2738 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+162,"Transaction #817145:
+- Client : <Personal Data>
+- Montant : 5212 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,3632835027,,<Uncategorized>,<DATE_TIME>,
+163,"Document d'identité :
+- Nom : <Personal Data> : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 81, rue de Leroux, <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+164,"<Personal Data> :
+Objet : Facture #968757
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par 3143 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+165,"Document d'identité :
+- Nom : Véronique Cousin
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 99, <Personal Data>, 17814 Sainte Thierry",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+166,"Transaction #229882:
+- Client : <Personal Data> : 3892 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,4363352423,,<Uncategorized>,<DATE_TIME>,
+167,"<Personal Data>
+Objet : Facture #802559
+<Personal Data>, votre paiement par carte Mastercard terminée par 0489 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+168,"Transaction #145977:
+- Client : <Personal Data>
+- Montant : 6001 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,7787026761,,<Uncategorized>,<DATE_TIME>,
+169,"<Personal Data> :
+Objet : Facture #56526
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par <Uncategorized> a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+170,"Document d'identité :
+- Nom : <Personal Data>-Bruneau
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 733, avenue <Personal Data>, 78564 Bazin-sur-Mer",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+171,"Transaction #133321:
+- Client : Luc <Personal Data> : 3591 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+172,"Contrat de location :
+- Locataire : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 83, rue de Lemaître, 20628 <Personal Data> Email : <Personal Data>",<PERSON>,<Uncategorized>,+212619873356,<EMAIL_ADDRESS>,,,<LOCATION>
+173,"Contrat de location :
+- Locataire : <Personal Data> : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 29, chemin Foucher, 41191 <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212613714540,<EMAIL_ADDRESS>,,,<LOCATION>
+174,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 261, <Uncategorized>, <Uncategorized> Pierre-sur-Diaz",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+175,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : rue <Personal Data>, <Uncategorized> Hardyboeuf",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+176,"Document d'identité :
+- Nom : <Personal Data> : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 95, rue Duval, <Uncategorized> <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+177,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 80, chemin <Personal Data>, 11577 MaillardBourg",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+178,"Document d'identité :
+- Nom : Véronique Couturier
+- CIN : <Personal Data> naissance : <Uncategorized>
+- Adresse : 28, boulevard <Uncategorized>, 07376 GiraudVille",<PERSON>,<Personal Data>,,,,<DATE_TIME>,<LOCATION>
+179,"<Personal Data> :
+Objet : Facture #97690
+Bonjour Pénélope Maillet, votre paiement par carte American Express terminée par 4119 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+180,"<Personal Data> S.A.S. :
+Objet : Facture #270988
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par <Uncategorized> a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+181,"<Personal Data> :
+Objet : Facture #747385
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par <Uncategorized> a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+182,"Transaction #297871:
+- Client : <Personal Data> : 5484 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,3793169606,,<Uncategorized>,<DATE_TIME>,
+183,"<Personal Data> :
+Objet : Facture #827113
+Bonjour Léon Diallo-Gillet, votre paiement par carte VISA 16 digit terminée par 1877 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+184,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 67, boulevard de Collet, 97434 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212657834637,<EMAIL_ADDRESS>,,,<LOCATION>
+185,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 99, rue de Dubois, 12899 Vincent",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+186,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 3, <Uncategorized>, 24209 Saint Victor",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+187,"Transaction #430591:
+- Client : <Personal Data> : 6659 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+188,"<Personal Data> :
+Objet : Facture #487093
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par 3674 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+189,"Transaction #382213:
+- Client : Eugène Bouvet Le Guillet
+- Montant : 9926 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+190,"Transaction #880702:
+- Client : <Personal Data>
+- Montant : 8679 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,9716890941,,<Uncategorized>,<DATE_TIME>,
+191,"Transaction #802757:
+- Client : <Personal Data>
+- Montant : 2049 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+192,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 64, rue <Personal Data>, 85760 <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+193,"Document d'identité :
+- Nom : <Personal Data> : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 12, <Uncategorized>, 15127 Lebon-sur-Lambert",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+194,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : <Personal Data>, 06383 PotierVille
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212657919209,<EMAIL_ADDRESS>,,,<LOCATION>
+195,"Transaction #351915:
+- Client : <Personal Data>
+- Montant : 3297 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+196,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 280, chemin Collin, <Uncategorized> Guibert-sur-Pichon
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212608938977,<EMAIL_ADDRESS>,,,<LOCATION>
+197,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 221, chemin <Uncategorized>, 85200 Coulon-sur-Moreau",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+198,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 54, boulevard de Pons, 76615 Baron",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+199,"Contrat de location :
+- Locataire : Étienne <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 36, avenue <Personal Data>, 37305 Lemaître
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212643361573,<EMAIL_ADDRESS>,,,<LOCATION>
+200,"<Personal Data> :
+Objet : Facture #164440
+Bonjour Véronique Dupont, votre paiement par carte VISA 16 digit terminée par 6877 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+201,"Document d'identité :
+- Nom : Théodore-Théophile Blondel
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 41, boulevard Fernandez, 92633 BertinBourg",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+202,"Transaction #424972:
+- Client : <Personal Data>
+- Montant : 3135 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,3837453089,,<Uncategorized>,<DATE_TIME>,
+203,"Transaction #88067:
+- Client : <Personal Data>
+- Montant : 2827 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+204,"<Personal Data> :
+Objet : Facture #200820
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par 5982 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+205,"Transaction #808736:
+- Client : <Personal Data> : 7303 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+206,"<Personal Data> :
+Objet : Facture #4713
+<Personal Data>, votre paiement par carte VISA 13 digit terminée par 4075 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+207,"Transaction #123979:
+- Client : <Personal Data> : 2660 MAD
+- Destinataire : IBAN <Personal Data> : <Uncategorized>",<PERSON>,,6359628556,,<Uncategorized>,<DATE_TIME>,
+208,"Document d'identité :
+- Nom : <Personal Data> : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 228, <Uncategorized>, <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+209,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : boulevard de Bonnin, 77311 Lacombedan",<PERSON>,<Personal Data>,,,,<DATE_TIME>,<LOCATION>
+210,"Contrat de location :
+- Locataire : Eugène <Personal Data> : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 31, <Uncategorized>, 94573 <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212674125051,<EMAIL_ADDRESS>,,,<LOCATION>
+211,"Document d'identité :
+- Nom : <Personal Data> : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 3, boulevard de Delmas, 66550 Deschamps",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+212,"Contrat de location :
+- Locataire : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 44, rue Olivier, <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212628275351,<EMAIL_ADDRESS>,,,<LOCATION>
+213,"Contrat de location :
+- Locataire : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 44, boulevard de Le Gall, <Uncategorized> Langloisnec
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212654031140,<EMAIL_ADDRESS>,,,<LOCATION>
+214,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 24, chemin <Personal Data>, 33607 Clerc",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+215,"<Personal Data> :
+Objet : Facture #82032
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par 4256 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+216,"Contrat de location :
+- <Personal Data> : <Personal Data> CIN : <Uncategorized>
+- Téléphone : +212683686176
+- Adresse : 15, avenue de Goncalves, 32975 <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212683686176,<EMAIL_ADDRESS>,,,<LOCATION>
+217,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 317, <Uncategorized>, <Uncategorized> <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+218,"Transaction #987630:
+- Client : <Personal Data> : 3007 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+219,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 55, <Personal Data>, <Uncategorized> Dufour-sur-Pottier",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+220,"Transaction #916243:
+- Client : <Personal Data> : 9155 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+221,"Contrat de location :
+- Locataire : Théophile Daniel
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 14, rue Lecoq, 97347 <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212653385204,<EMAIL_ADDRESS>,,,<LOCATION>
+222,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 746, rue de Schneider, 08575 <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,<Uncategorized>,<EMAIL_ADDRESS>,,,<LOCATION>
+223,"Transaction #756791:
+- Client : <Personal Data> : 8801 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,4669133220,,<Uncategorized>,<DATE_TIME>,
+224,"<Personal Data> :
+Objet : Facture #769976
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par 7557 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+225,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 6, chemin <Personal Data>, <Uncategorized> <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212652431967,<EMAIL_ADDRESS>,,,<LOCATION>
+226,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : <Uncategorized>, 92233 <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212620027688,<EMAIL_ADDRESS>,,,<LOCATION>
+227,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 44, boulevard <Personal Data>, 90760 Sainte Josephboeuf
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212610996421,<EMAIL_ADDRESS>,,,<LOCATION>
+228,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : chemin de Gilbert, 79186 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212615483251,<EMAIL_ADDRESS>,,,<LOCATION>
+229,"Transaction #315943:
+- Client : <Personal Data> : 961 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+230,"<Personal Data> :
+Objet : Facture #271899
+<Personal Data>, votre paiement par carte Mastercard terminée par 0459 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+231,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 29, avenue <Personal Data>, 86120 <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+232,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : rue <Uncategorized>, 79236 Samson",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+233,"<Personal Data> :
+Objet : Facture #460951
+<Personal Data>, votre paiement par carte JCB 16 digit terminée par 1153 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+234,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 60, chemin <Personal Data>, 50453 <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+235,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 69, rue de Moreno, 44520 Sainte Gilbert",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+236,"Transaction #57138:
+- Client : <Personal Data> : 1293 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+237,"Document d'identité :
+- Nom : Anastasie Da Costa
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 61, rue <Uncategorized>, 21413 Baron",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+238,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 79, rue <Personal Data>, <Uncategorized> MarquesBourg",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+239,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 50, avenue <Personal Data>, <Uncategorized> <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+240,"<Personal Data> :
+Objet : Facture #944802
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par 1564 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+241,"Contrat de location :
+- Locataire : Louis de Boulay
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : avenue Bailly, <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212603439685,<EMAIL_ADDRESS>,,,<LOCATION>
+242,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 14, rue Muller, <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+243,"<Personal Data> :
+Objet : Facture #81784
+<Personal Data>, votre paiement par carte Diners Club / Carte Blanche terminée par 2401 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+244,"Transaction #466109:
+- Client : <Personal Data>
+- Montant : 2370 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+245,"Transaction #978443:
+- Client : <Personal Data>
+- Montant : 5416 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,1257767864,,<Uncategorized>,<DATE_TIME>,
+246,"Transaction #522598:
+- Client : <Personal Data>
+- Montant : 7723 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+247,"Document d'identité :
+- Nom : Margaud-Victoire Bruneau
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 2, boulevard <Personal Data>, 57725 <Uncategorized>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+248,"Contrat de location :
+- Locataire : Georges <Uncategorized>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 845, rue Mary, 17150 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212687842589,<EMAIL_ADDRESS>,,,<LOCATION>
+249,"Transaction #659420:
+- Client : <Personal Data> : 3082 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+250,"<Personal Data> :
+Objet : Facture #747242
+<Personal Data>, votre paiement par carte VISA 16 digit terminée par 3754 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+251,"Transaction #534513:
+- Client : <Personal Data>
+- Montant : 6793 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+252,"<Personal Data> :
+Objet : Facture #253824
+Bonjour <Personal Data>, votre paiement par carte Mastercard terminée par 9816 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+253,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 92, boulevard <Personal Data>, <Uncategorized> Marchand",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+254,"Transaction #251520:
+- Client : <Personal Data>
+- Montant : 9997 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+255,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : chemin <Personal Data>, 34350 Hoareau-les-Bains
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212688003787,<EMAIL_ADDRESS>,,,<LOCATION>
+256,"Document d'identité :
+- Nom : <Personal Data> : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 76, rue de Leclerc, 24102 Laine",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+257,"<Personal Data> :
+Objet : Facture #154891
+<Personal Data>, votre paiement par carte Maestro terminée par <Uncategorized> a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+258,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 9, chemin <Personal Data>, 21220 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212640316118,<EMAIL_ADDRESS>,,,<LOCATION>
+259,"Transaction #148747:
+- Client : <Personal Data>
+- Montant : 5513 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,8203471337,,<Uncategorized>,<DATE_TIME>,
+260,"Contrat de location :
+- Locataire : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : <Uncategorized>, 52940 Valentin-sur-Merle
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212613526647,<EMAIL_ADDRESS>,,,<LOCATION>
+261,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 45, avenue <Personal Data>, 07194 Vallet",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+262,"Transaction #228764:
+- Client : <Personal Data>
+- Montant : 6485 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+263,"Transaction #536001:
+- Client : <Personal Data> : 5690 MAD
+- Destinataire : IBAN <Personal Data> : <Uncategorized>",<PERSON>,,2350280429,,<Uncategorized>,<DATE_TIME>,
+264,"<Personal Data> S.A.R.L. :
+Objet : Facture #670048
+<Personal Data>, votre paiement par carte Maestro terminée par 3722 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+265,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : boulevard Leroux, 08244 Bigot
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212626497245,<EMAIL_ADDRESS>,,,<LOCATION>
+266,"Transaction #488672:
+- Client : <Personal Data>
+- Montant : 2542 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+267,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : rue <Personal Data>, <Uncategorized> Saint MichelleVille",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+268,"Contrat de location :
+- <Personal Data> : <Personal Data> <Personal Data> <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 77, boulevard <Personal Data>, <Uncategorized> <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212692272802,<EMAIL_ADDRESS>,,,<LOCATION>
+269,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 67, rue <Personal Data>, 34790 Cordier",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+270,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 3, rue <Uncategorized>, <Uncategorized> Jacob-sur-Bigot
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212666636281,<EMAIL_ADDRESS>,,,<LOCATION>
+271,"Transaction #274743:
+- Client : <Personal Data>
+- Montant : 6471 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+272,"Contrat de location :
+- <Personal Data> : Odette <Personal Data> : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 45, boulevard <Personal Data>, <Uncategorized> Martineau-les-Bains
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212613798915,<EMAIL_ADDRESS>,,,<LOCATION>
+273,"Transaction #484284:
+- Client : <Personal Data> : 4173 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+274,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 55, boulevard <Personal Data>, 20956 <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+275,"Transaction #896977:
+- Client : <Personal Data> : 3117 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,4476331410,,<Uncategorized>,<DATE_TIME>,
+276,"Contrat de location :
+- Locataire : <Uncategorized>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 51, rue de Guillou, 42508 Guichard-les-Bains
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212620185051,<EMAIL_ADDRESS>,,,<LOCATION>
+277,"<Personal Data> :
+Objet : Facture #341268
+Bonjour Eugène-Henri Hubert, votre paiement par carte VISA 13 digit terminée par 7586 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+278,"Transaction #796304:
+- Client : <Personal Data> : 8883 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+279,"Document d'identité :
+- Nom : <Personal Data> CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 716, rue <Personal Data>, 97325 <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+280,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 8, boulevard <Personal Data>, 15613 Salmon",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+281,"<Personal Data> :
+Objet : Facture #82290
+<Personal Data>, votre paiement par carte JCB 15 digit terminée par 6525 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+282,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 56, boulevard Boulay, 55492 <Personal Data>
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,<Uncategorized>,<EMAIL_ADDRESS>,,,<LOCATION>
+283,"<Personal Data> Hamel SA :
+Objet : Facture #941323
+<Personal Data>, votre paiement par carte Discover terminée par <Uncategorized> a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+284,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 75, rue Samson, 69635 Traore-sur-Texier",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+285,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 9, chemin <Uncategorized>, <Uncategorized> <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212697618428,<EMAIL_ADDRESS>,,,<LOCATION>
+286,"Contrat de location :
+- Locataire : <Uncategorized>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 53, rue de Maurice, <Uncategorized> <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212699238922,<EMAIL_ADDRESS>,,,<LOCATION>
+287,"Contrat de location :
+- <Personal Data> : <Personal Data>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 76, chemin Devaux, <Uncategorized> Da Costa
+- Email : <Personal Data>",<PERSON>,<Uncategorized>,+212634173842,<EMAIL_ADDRESS>,,,<LOCATION>
+<Uncategorized>,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 46, rue de Guillou, <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+289,"<Personal Data> :
+Objet : Facture #892639
+<Personal Data>, votre paiement par carte Mastercard terminée par 9676 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+290,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : chemin <Uncategorized>, <Uncategorized>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+291,"<Personal Data> :
+Objet : Facture #93081
+<Personal Data>, votre paiement par carte Discover terminée par 0715 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+292,"Transaction #949217:
+- Client : <Personal Data> : 4966 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,2389910201,,<Uncategorized>,<DATE_TIME>,
+293,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 109, avenue Pottier, 48566 RousseauBourg",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+294,"Document d'identité :
+- Nom : <Personal Data>
+- CIN : <Uncategorized>
+- Date de naissance : <Uncategorized>
+- Adresse : 6, <Uncategorized>, 75729 <Personal Data>",<PERSON>,<Uncategorized>,,,,<DATE_TIME>,<LOCATION>
+295,"Transaction #583415:
+- Client : <Personal Data>
+- Montant : 7829 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+296,"<Personal Data> :
+Objet : Facture #995439
+<Personal Data>, votre paiement par carte JCB 15 digit terminée par 8654 a été enregistré le <Uncategorized>.",,,,,,<DATE_TIME>,
+297,"Transaction #82021:
+- Client : <Personal Data>
+- Montant : 8342 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,<Uncategorized>,,<Uncategorized>,<DATE_TIME>,
+298,"Transaction #996056:
+- Client : <Personal Data>
+- Montant : 2097 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,8192256726,,<Uncategorized>,<DATE_TIME>,
+299,"Transaction #579162:
+- Client : <Personal Data> : 5311 MAD
+- Destinataire : IBAN <Uncategorized>
+- Date : <Uncategorized>",<PERSON>,,3876509090,,<Uncategorized>,<DATE_TIME>,
+300,"Contrat de location :
+- Locataire : <Uncategorized>
+- CIN : <Uncategorized>
+- Téléphone : <Personal Data>
+- Adresse : 50, rue <Personal Data>, 84678 <Personal Data> : <Personal Data>",<PERSON>,<Uncategorized>,+212650213443,<EMAIL_ADDRESS>,,,<LOCATION>

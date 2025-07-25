@@ -1,5 +1,5 @@
 import json
-from core import get_analyzer
+from logic import get_analyzer
 
 def load_dataset(path):
     with open(path, "r", encoding="utf-8") as f:
