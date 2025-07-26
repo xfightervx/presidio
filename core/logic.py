@@ -180,7 +180,7 @@ GENDER_RECOGNIZER = PatternRecognizer(
     context=["sex", "gender", "assigned", "identity"],
     supported_language="en"
 )
-
+# this function aimes to detect any implied gender references in the text for future neutralization
 class ImpliedGender(EntityRecognizer):
     def __init__(self):
         super().__init__(supported_entities=["IMPLIED_GENDER"])
@@ -321,8 +321,8 @@ class JobTitleRecognizer(EntityRecognizer):
                     )
                     start = lowered.find(job, start + 1)
         return results
-#add it to the analyzer
-#package it into a function
+
+#adding the recognizers to the analyzer
 def get_analyzer():
     analyzer = AnalyzerEngine()
     analyzer.registry.add_recognizer(IBAN_RECOGNIZER)

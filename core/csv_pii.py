@@ -3,19 +3,31 @@ import json
 from rapidfuzz.fuzz import token_set_ratio
 from logic import get_analyzer
 from collections import defaultdict
+"""
+this script aim to make the analyzer more optimised for csv files
+it will read the csv headers and try to match them with known entities
+then it will sample the rows to analyze them and create a profile for each header
+if matching is not found, it will analyze the whole column
+it will also mask the entities in the text and create a report of the masking
+"""
 csv_file = pd.read_csv("assets/test.csv")
 
 headers = csv_file.columns.tolist()
 with open("assets/rgdp_glossary.json") as f:
     GDPR_CATEGORIES = json.load(f)
 
-MIN_SCORE = 0.6
+MIN_SCORE = 0.6 # minimum score to consider an entity detected
 def score_header(headers, threshhold=70):
+    """
+        this function uses token_Set_ration to match headers with known entities sysnonyms
+        then returns a dictionary with the header as key and the matched entity and score as value
+        if no match is found, the entity is set to None
+    """
     with open("assets/entities_synonymes.json") as f:
         ENTITY_SYNONYMS = json.load(f)
     header_match = {}
     for header in headers:
-        header_clean = header.strip().lower().replace("_", "").replace(" ", "")
+        header_clean = header.strip().lower().replace("_", "").replace(" ", "") # clean the header
         best_match = None
         best_score = 0
         for entity, synonyms in ENTITY_SYNONYMS.items():
@@ -32,15 +44,23 @@ def score_header(headers, threshhold=70):
     return header_match
 
 
-scores = score_header(headers, threshhold=70)
+scores = score_header(headers, threshhold=70) # this is just for the test
 
-def adaptive_sampling(rows, threshold=0.3, min_samples=30):
+def adaptive_sampling(rows, threshold=0.3, min_samples=30): 
+    """
+    we use this adaptive sampling to sample a percetage of the rows if the number or rows is low and a 
+    fixed number of rows if the number of rows is high
+    """
     length = len(rows)
     if length < min_samples:
         return rows
     return rows[:min(int(length * threshold), min_samples)]
 
 def sample_analyze(headers, rows, analyzer, scores):
+    """
+    this function will sample the rows and analyze them to create a profile for each header
+    it will return a dictionary with the header as key and the profile as value
+    """
     profiled = {}
     simple = adaptive_sampling(rows)
     for idx, header in enumerate(headers):
@@ -73,10 +93,14 @@ def sample_analyze(headers, rows, analyzer, scores):
             "similarity_score": scores[header]["score"],
             "top_detected_entities": hits,
             "samples": entity_det
-        }
+        } # i detailled the profile for debugging purposes
     return profiled
 
 def full_analyze_mask(column, analyzer):
+    """
+    this function will analyze the whole column and mask it at the same time to save resources
+    it will return a list of masked texts
+    """
     masked = []
     for cell in column:
         if pd.isna(cell):
@@ -112,6 +136,11 @@ def full_analyze_mask(column, analyzer):
 
 report = defaultdict(lambda: defaultdict(int))
 def mask(text: str, entities):
+    """
+    this is simplified masking function based on the rgdp glossary
+    it can be more sofisticated to treat each entity type differently
+    but for now it will just mask the entities with the category name
+    """
     masked = ""
     last_end = 0
     for entity in entities:
@@ -129,6 +158,11 @@ def mask(text: str, entities):
 
 
 def process_csv(csv_path):
+    """
+    this a wrapper function to process the csv file
+    it will read the csv file, score the headers, sample analyze the rows and mask the entities
+    it will return the masked dataframe and a report of the masking
+    """
     df = pd.read_csv(csv_path, dtype=str)
     headers = df.columns.tolist()
     rows = df.values.tolist()
@@ -140,7 +174,7 @@ def process_csv(csv_path):
 
     for header in headers:
         profile_info = profiled.get(header)
-        if not profile_info:
+        if not profile_info: # case no guessed entity or no profile
             df[header] = full_analyze_mask(df[header].rename(header) ,analyzer)
             continue
         guessed_entity = profile_info["guessed_entity"]
