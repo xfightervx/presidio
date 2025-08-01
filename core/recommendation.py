@@ -109,7 +109,7 @@ def full_analyze(df: pd.Series, analyzer):
     for row in df:
         if pd.isna(row):
             continue
-        result = analyzer.analyze(row)
+        result = analyzer.analyze(row, language="en")
         result = [r for r in result if r.score >= MIN_SCORE]
         if len(result) == 0:
             continue 
@@ -137,14 +137,14 @@ def full_analyze(df: pd.Series, analyzer):
     
 
 # the next step is enrichement and for that we will use k means to cluster headers to find similar ones
-with open("core/models/kmeans_encoder.pkl", "rb") as f:
+with open("models/header_encoder.pkl", "rb") as f:
     sentence_model = pd.read_pickle(f)
-with open("core/models/kmeans_headers.pkl", "rb") as f:
+with open("models/kmeans_headers.pkl", "rb") as f:
     kmeans_model = pd.read_pickle(f)
-with open("core/models/pca_transform.pkl", "rb") as f:
+with open("models/pca_transform.pkl", "rb") as f:
     pca_model = pd.read_pickle(f)
 
-ENRICHABLE_HEADERS = [0,2]
+ENRICHABLE_HEADERS = [2]
 
 def enrich_headers(df: pd.DataFrame) -> dict:
     """
@@ -213,38 +213,36 @@ def analyze_categorization(df: pd.DataFrame) -> dict:
 
 
 # this is the main function that wraps everything together
-def recommend_actions(df: pd.DataFrame) -> list:
+def recommend_actions(df: pd.DataFrame) -> dict:
     """
-    Analyzes the DataFrame and provides a unified list of recommendations
-    for handling missing values, PII detection, enrichment, and categorization.
-
-    Parameters:
-    df (pd.DataFrame): The DataFrame to analyze.
+    Analyzes the DataFrame and groups recommendations by column.
 
     Returns:
-    list: A list of dictionaries, each containing a recommendation with a column and action.
+    dict: { column_name: [ {action: ..., reason: ..., ...}, ... ] }
     """
+    grouped = {}
+    
+    # Run all analyzers
     na_results = analyze_table_na(df)
     pii_results = process_pii(df)
     enrich_results = enrich_headers(df)
-    cat_results = analyze_categorization(df)
+    categorize_results = analyze_categorization(df)
+    
+    # Merge all results
+    all_results = {}
+    for results_dict in [na_results, pii_results, enrich_results, categorize_results]:
+        for col, rec in results_dict.items():
+            if col not in all_results:
+                all_results[col] = []
+            all_results[col].append(rec)
 
-    combined = []
-
-    seen_keep = False
-    def add_recommendations(source_dict):
-        nonlocal seen_keep
-        for col, rec in source_dict.items():
-            # Skip "keep" if we've already added one
-            if rec["action"] == "keep":
-                if seen_keep:
-                    continue
-                seen_keep = True
-            combined.append({"column": col, **rec})
-
-    add_recommendations(na_results)
-    add_recommendations(pii_results)
-    add_recommendations(enrich_results)
-    add_recommendations(cat_results)
-
-    return combined
+    # Filter out "keep" actions and group recommendations
+    for col, recs in all_results.items():
+        filtered_recs = [rec for rec in recs if rec.get("action") != "keep"]
+        if filtered_recs:
+            grouped[col] = filtered_recs
+    
+    with open("logs/recommendations.log", "w") as f:
+        for col, recs in grouped.items():
+            f.write(f"{col}: {recs}\n")
+    return grouped

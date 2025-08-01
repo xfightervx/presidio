@@ -1,7 +1,7 @@
 import pandas as pd
 import json
 from rapidfuzz.fuzz import token_set_ratio
-from logic import get_analyzer
+from .logic import get_analyzer
 from collections import defaultdict
 """
 this script aim to make the analyzer more optimised for csv files
