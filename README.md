@@ -94,7 +94,7 @@ with open("assets/masking_report.json", "w") as f:
 
 ## 🖼️ Frontend Report Viewer
 
-A minimal dashboard exists to visualize masking reports.
+A minimal app to upload the csv files and get fullon recommnedations.
 
 1. Put the masking report data into `gdpr-dashboard/src/data/`
 2. Install frontend dependencies:
@@ -108,3 +108,13 @@ npm install
 ```bash
 npm run dev
 ```
+
+## 🖼️ Backend
+
+the back end is also minimal just
+
+```bash
+unicorn core.backend:app
+```
+
+ENJOY.
