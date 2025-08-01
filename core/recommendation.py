@@ -14,7 +14,7 @@ import pandas as pd
 from .csv_pii import full_analyze_mask,score_header, sample_analyze,GDPR_CATEGORIES,MIN_SCORE
 from .logic import get_analyzer
 NA_THRESHOLD = 0.6
-
+GENERALIZED_ENTITIES = ["DATE_TIME", "JOB_TITLE"]
 
 def analyze_table_na(df: pd.DataFrame) -> dict:
     """
@@ -81,17 +81,20 @@ def process_pii(df: pd.DataFrame):
         )
         if is_confirmed:
             recommendations[header] = {
-                "action": "mask",
+                "action": "mask" if guessed_entity not in GENERALIZED_ENTITIES else "generalize",
                 "reason": f"confirmed PII entity: {guessed_entity}",
                 "gdpr_category": GDPR_CATEGORIES.get(guessed_entity, "Uncategorized"),
                 "top_entities": top_entities
             }
-        else:
+        else:   
             recommendations[header] = full_analyze(df[header], analyzer)
 
     return recommendations
 
 #this function is equivalent to full_analyze_mask in csv_pii.py without masking and returns a Dictionary instead of masked
+"""
+i just added the generalizing so it suggest it when we have other choices to make use of the data without compromising the rgpd
+"""
 def full_analyze(df: pd.Series, analyzer):
     """
     this function analyzes the DataFrame column for PII detection and returns a dictionary with recommendations on how to handle the column.
@@ -125,7 +128,7 @@ def full_analyze(df: pd.Series, analyzer):
         }
     top_entities = sorted(entities.items(), key=lambda x: x[1], reverse=True)[:3]
     return {
-        "action": "mask",
+        "action": "mask" if top_entities[0][0] not in GENERALIZED_ENTITIES else "generalize",
         "reason": "detected PII entities",
         "guessed_entity": top_entities[0][0],
         "top_detected_entities": top_entities,
@@ -134,3 +137,114 @@ def full_analyze(df: pd.Series, analyzer):
     
 
 # the next step is enrichement and for that we will use k means to cluster headers to find similar ones
+with open("core/models/kmeans_encoder.pkl", "rb") as f:
+    sentence_model = pd.read_pickle(f)
+with open("core/models/kmeans_headers.pkl", "rb") as f:
+    kmeans_model = pd.read_pickle(f)
+with open("core/models/pca_transform.pkl", "rb") as f:
+    pca_model = pd.read_pickle(f)
+
+ENRICHABLE_HEADERS = [0,2]
+
+def enrich_headers(df: pd.DataFrame) -> dict:
+    """
+    this function analyzes using the kmeans model to find if the headers can be enriched
+    Parameters:
+    df (pd.DataFrame): The DataFrame to analyze for header enrichment.
+    Returns:
+    dict: A dictionary containing booleans on if the headers can be enriched (how to enrich is too vague for me to implement so it s up to the user).
+    """
+    enrichable = {}
+    for header in df.columns:
+        embedding = sentence_model.encode([header])
+        embedding = pca_model.transform(embedding)
+        cluster = kmeans_model.predict(embedding)[0]
+        if cluster in ENRICHABLE_HEADERS:
+            enrichable[header] = {
+                "action": "enrich",
+                "reason": "header matches enrichable cluster",
+                "cluster": int(cluster),
+                "suggestions": [
+                    "join external source",
+                    "derive from related field",
+                    "add semantic tag"
+                ]
+            }
+        else:
+            enrichable[header] = {
+                "action": "keep",
+                "reason": "no enrichment recommended",
+                "cluster": int(cluster)
+            }
+
+    return enrichable
+UNIQNESS_THRESHOLD = 0.05
+MAX_UNIQUE_ABSOLUTE = 50
+def analyze_categorization(df: pd.DataFrame) -> dict:
+    """
+    Determines if columns should be categorized based on uniqueness ratio and max unique value count.
+
+    Parameters:
+    df (pd.DataFrame): DataFrame to analyze
+
+    Returns:
+    dict: informations on the uniquness of the columns and recommendations for categorization
+    """
+    recommendations = {}
+    total_rows = len(df)
+
+    for column in df.columns:
+        unique_count = df[column].nunique(dropna=True)
+        if total_rows == 0:
+            continue
+        uniqueness_ratio = unique_count / total_rows
+
+        if (uniqueness_ratio <= UNIQNESS_THRESHOLD) and (unique_count <= MAX_UNIQUE_ABSOLUTE):
+            top_values = df[column].value_counts().head(5).to_dict()
+            recommendations[column] = {
+                "action": "categorize",
+                "reason": f"Low uniqueness ratio ({uniqueness_ratio:.2f}) and unique count ({unique_count})",
+                "uniqueness_ratio": uniqueness_ratio,
+                "unique_count": unique_count,
+                "example_categories": top_values
+            }
+
+    return recommendations
+
+
+# this is the main function that wraps everything together
+def recommend_actions(df: pd.DataFrame) -> list:
+    """
+    Analyzes the DataFrame and provides a unified list of recommendations
+    for handling missing values, PII detection, enrichment, and categorization.
+
+    Parameters:
+    df (pd.DataFrame): The DataFrame to analyze.
+
+    Returns:
+    list: A list of dictionaries, each containing a recommendation with a column and action.
+    """
+    na_results = analyze_table_na(df)
+    pii_results = process_pii(df)
+    enrich_results = enrich_headers(df)
+    cat_results = analyze_categorization(df)
+
+    combined = []
+
+    seen_keep = False
+    def add_recommendations(source_dict):
+        nonlocal seen_keep
+        for col, rec in source_dict.items():
+            # Skip "keep" if we've already added one
+            if rec["action"] == "keep":
+                if seen_keep:
+                    continue
+                seen_keep = True
+            combined.append({"column": col, **rec})
+
+    add_recommendations(na_results)
+    add_recommendations(pii_results)
+    add_recommendations(enrich_results)
+    add_recommendations(cat_results)
+
+    return combined
