@@ -1,0 +1,50 @@
+{
+  "PERSON": {
+    "mask": {
+      "status": "accepted",
+      "value": null
+    }
+  },
+  "ID_MAROC": {
+    "mask": {
+      "status": "accepted",
+      "value": null
+    }
+  },
+  "PHONE_NUMBER": {
+    "mask": {
+      "status": "accepted",
+      "value": null
+    }
+  },
+  "EMAIL_ADDRESS": {
+    "drop": {
+      "status": "accepted",
+      "value": null
+    }
+  },
+  "IBAN_CODE": {
+    "drop": {
+      "status": "accepted",
+      "value": null
+    }
+  },
+  "DATE_TIME": {
+    "generalize": {
+      "status": "accepted",
+      "value": "auto"
+    }
+  },
+  "LOCATION": {
+    "mask": {
+      "status": "accepted",
+      "value": null
+    }
+  },
+  "text": {
+    "mask": {
+      "status": "accepted",
+      "value": null
+    }
+  }
+}

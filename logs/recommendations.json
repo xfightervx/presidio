@@ -1,0 +1,218 @@
+[
+  {
+    "action": "fill",
+    "reason": "some values are missing",
+    "percentage": 0.23,
+    "filling": {
+      "mode": "Vincent"
+    },
+    "column": "PERSON"
+  },
+  {
+    "action": "mask",
+    "reason": "confirmed PII entity: PERSON",
+    "gdpr_category": "Personal Data",
+    "top_entities": [
+      [
+        "PERSON",
+        26
+      ]
+    ],
+    "column": "PERSON"
+  },
+  {
+    "action": "fill",
+    "reason": "some values are missing",
+    "percentage": 0.47,
+    "filling": {
+      "mode": "AC05974"
+    },
+    "column": "ID_MAROC"
+  },
+  {
+    "action": "mask",
+    "reason": "detected PII entities",
+    "guessed_entity": "CIN",
+    "top_detected_entities": [
+      [
+        "CIN",
+        159
+      ],
+      [
+        "PERSON",
+        6
+      ],
+      [
+        "LOCATION",
+        2
+      ]
+    ],
+    "percentage of PII": 53.0,
+    "column": "ID_MAROC"
+  },
+  {
+    "action": "fill",
+    "reason": "some values are missing",
+    "percentage": 0.53,
+    "filling": {
+      "mean": 106581718463.75887,
+      "median": 9847088151.0,
+      "max": 212699238922.0,
+      "min": 388356267.0
+    },
+    "column": "PHONE_NUMBER"
+  },
+  {
+    "action": "mask",
+    "reason": "detected PII entities",
+    "guessed_entity": "UK_NHS",
+    "top_detected_entities": [
+      [
+        "UK_NHS",
+        7
+      ]
+    ],
+    "percentage of PII": 2.3333333333333335,
+    "column": "PHONE_NUMBER"
+  },
+  {
+    "action": "drop",
+    "reason": "high percentage of missing values",
+    "percentage": 0.77,
+    "column": "EMAIL_ADDRESS"
+  },
+  {
+    "action": "mask",
+    "reason": "confirmed PII entity: EMAIL_ADDRESS",
+    "gdpr_category": "Personal Data",
+    "top_entities": [
+      [
+        "EMAIL_ADDRESS",
+        10
+      ]
+    ],
+    "column": "EMAIL_ADDRESS"
+  },
+  {
+    "action": "drop",
+    "reason": "high percentage of missing values",
+    "percentage": 0.76,
+    "column": "IBAN_CODE"
+  },
+  {
+    "action": "mask",
+    "reason": "detected PII entities",
+    "guessed_entity": "IBAN_CODE",
+    "top_detected_entities": [
+      [
+        "IBAN_CODE",
+        72
+      ],
+      [
+        "PERSON",
+        6
+      ],
+      [
+        "MEDICAL_LICENSE",
+        4
+      ]
+    ],
+    "percentage of PII": 24.0,
+    "column": "IBAN_CODE"
+  },
+  {
+    "action": "fill",
+    "reason": "some values are missing",
+    "percentage": 0.23,
+    "filling": {
+      "mode": "2025-05-05"
+    },
+    "column": "DATE_TIME"
+  },
+  {
+    "action": "generalize",
+    "reason": "confirmed PII entity: DATE_TIME",
+    "gdpr_category": "Uncategorized",
+    "top_entities": [
+      [
+        "DATE_TIME",
+        20
+      ]
+    ],
+    "column": "DATE_TIME"
+  },
+  {
+    "action": "enrich",
+    "reason": "header matches enrichable cluster",
+    "cluster": 2,
+    "suggestions": [
+      "join external source",
+      "derive from related field",
+      "add semantic tag"
+    ],
+    "column": "DATE_TIME"
+  },
+  {
+    "action": "fill",
+    "reason": "some values are missing",
+    "percentage": 0.47,
+    "filling": {
+      "mode": "1, chemin de Bazin, 07477 Rousset-sur-Maillet"
+    },
+    "column": "LOCATION"
+  },
+  {
+    "action": "mask",
+    "reason": "confirmed PII entity: LOCATION",
+    "gdpr_category": "Uncategorized",
+    "top_entities": [
+      [
+        "PERSON",
+        15
+      ],
+      [
+        "DATE_TIME",
+        11
+      ],
+      [
+        "LOCATION",
+        4
+      ]
+    ],
+    "column": "LOCATION"
+  },
+  {
+    "action": "mask",
+    "reason": "detected PII entities",
+    "guessed_entity": "LOCATION",
+    "top_detected_entities": [
+      [
+        "LOCATION",
+        1
+      ]
+    ],
+    "percentage of PII": 0.33333333333333337,
+    "column": "text_id"
+  },
+  {
+    "action": "mask",
+    "reason": "detected PII entities",
+    "guessed_entity": "PERSON",
+    "top_detected_entities": [
+      [
+        "PERSON",
+        512
+      ],
+      [
+        "DATE_TIME",
+        291
+      ],
+      [
+        "CIN",
+        159
+      ]
+    ],
+    "percentage of PII": 100.0,
+    "column": "text"
+  }
+]

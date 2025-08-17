@@ -1,27 +1,30 @@
-import { useState } from "react";
-import ActionLegend from "./components/ActionLegend";
-import UploadArea from "./components/UploadArea";
-import RecommendationsDisplay from "./components/RecommendationsDisplay";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import DataStewardPage from "./pages/DataStewardPage";
+import DataQualityPage from "./pages/DataQualityPage";
 
-export default function App() {
-  const [recommendations, setRecommendations] = useState(null);
-
+function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-6xl mx-auto p-6 space-y-6">
-        <div className="text-center py-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
-            🛡️ GDPR Data Analysis Dashboard
-          </h1>
-          <p className="text-gray-600 text-lg">
-            Upload your CSV file to get intelligent recommendations for data privacy and processing
-          </p>
-        </div>
-        
-        <ActionLegend />
-        <UploadArea onResult={setRecommendations} />
-        {recommendations && <RecommendationsDisplay data={recommendations} />}
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        {/* Navigation */}
+        <nav className="bg-white shadow p-4 flex justify-center gap-6">
+          <Link to="/" className="text-blue-600 hover:underline">
+            Data Steward
+          </Link>
+          <Link to="/quality" className="text-blue-600 hover:underline">
+            Data Quality
+          </Link>
+        </nav>
+
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<DataStewardPage />} />
+          <Route path="/quality" element={<DataQualityPage />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
+
+export default App;

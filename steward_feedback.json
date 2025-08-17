@@ -1,0 +1,24 @@
+{
+  "PHONE_NUMBER": {
+    "fill": {
+      "status": "rejected",
+      "value": "387473834"
+    },
+    "mask": {
+      "status": "accepted",
+      "value": null
+    }
+  },
+  "ID_MAROC": {
+    "mask": {
+      "status": "accepted",
+      "value": null
+    }
+  },
+  "PERSON": {
+    "fill": {
+      "status": "rejected",
+      "value": null
+    }
+  }
+}
