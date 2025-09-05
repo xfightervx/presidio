@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module core.data_quality</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="core.html" class="white">core</a>.data_quality</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Clenovo%5Cdesktop%5Cstage1%5Cpresidio%5Ccore%5Cdata_quality.py">c:\users\lenovo\desktop\stage1\presidio\core\data_quality.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="pandas.html">pandas</a><br>
+</td><td class="multicolumn"><a href="re.html">re</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-comp"><strong>comp</strong></a>(df: pandas.core.frame.DataFrame) -&gt; dict</dt><dd><span class="code">Enhanced&nbsp;Completeness:&nbsp;%&nbsp;of&nbsp;non-null&nbsp;values&nbsp;per&nbsp;column&nbsp;with&nbsp;additional&nbsp;metrics</span></dd></dl>
+ <dl><dt><a name="-cons"><strong>cons</strong></a>(df: pandas.core.frame.DataFrame) -&gt; dict</dt><dd><span class="code">Enhanced&nbsp;Consistency:&nbsp;comprehensive&nbsp;validation&nbsp;with&nbsp;data&nbsp;type&nbsp;detection</span></dd></dl>
+ <dl><dt><a name="-data_profiling"><strong>data_profiling</strong></a>(df: pandas.core.frame.DataFrame) -&gt; dict</dt><dd><span class="code">Comprehensive&nbsp;data&nbsp;profiling&nbsp;with&nbsp;statistical&nbsp;insights</span></dd></dl>
+ <dl><dt><a name="-data_quality_score"><strong>data_quality_score</strong></a>(df: pandas.core.frame.DataFrame) -&gt; dict</dt><dd><span class="code">Calculate&nbsp;overall&nbsp;data&nbsp;quality&nbsp;score&nbsp;based&nbsp;on&nbsp;multiple&nbsp;factors</span></dd></dl>
+ <dl><dt><a name="-dup"><strong>dup</strong></a>(df: pandas.core.frame.DataFrame) -&gt; dict</dt><dd><span class="code">Enhanced&nbsp;Duplicates:&nbsp;comprehensive&nbsp;duplicate&nbsp;analysis</span></dd></dl>
+ <dl><dt><a name="-get_quality_recommendations"><strong>get_quality_recommendations</strong></a>(overall_score, duplicate_pct, completeness_score, consistency_score)</dt><dd><span class="code">Generate&nbsp;actionable&nbsp;recommendations&nbsp;based&nbsp;on&nbsp;quality&nbsp;scores</span></dd></dl>
+ <dl><dt><a name="-quality"><strong>quality</strong></a>(df: pandas.core.frame.DataFrame) -&gt; dict</dt><dd><span class="code">Compute&nbsp;comprehensive&nbsp;quality&nbsp;indicators&nbsp;with&nbsp;enhanced&nbsp;metrics<br>
+If&nbsp;any&nbsp;others&nbsp;where&nbsp;to&nbsp;be&nbsp;added&nbsp;just&nbsp;define&nbsp;the&nbsp;indicator&nbsp;into&nbsp;a&nbsp;function&nbsp;and&nbsp;then&nbsp;add&nbsp;it&nbsp;the&nbsp;return&nbsp;dictionary</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>CREDIT_CARD_RE</strong> = re.compile('^(?:\\d{4}[-\\s]?){3}\\d{4}$')<br>
+<strong>DATE_RE</strong> = re.compile('^(?:\\d{4}[-/]\\d{1,2}[-/]\\d{1,2}|\...]\\d{4}|\\d{4}\\d{2}\\d{2}|\\d{2}\\d{2}\\d{4})$')<br>
+<strong>EMAIL_RE</strong> = re.compile('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')<br>
+<strong>IP_ADDRESS_RE</strong> = re.compile('^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9...\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$')<br>
+<strong>PHONE_RE</strong> = re.compile('^[\\+]?[1-9][\\d]{0,15}$')<br>
+<strong>POSTAL_CODE_RE</strong> = re.compile('^[A-Z0-9]{3,10}$')<br>
+<strong>URL_RE</strong> = re.compile('^https?://(?:[-\\w.])+(?:\\:[0-9]+)?...])*(?:\\?(?:[\\w&amp;=%.])*)?(?:\\#(?:[\\w.])*)?)?$')</td></tr></table>
+</body></html>

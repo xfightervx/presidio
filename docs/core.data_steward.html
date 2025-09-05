@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module core.data_steward</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="core.html" class="white">core</a>.data_steward</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Clenovo%5Cdesktop%5Cstage1%5Cpresidio%5Ccore%5Cdata_steward.py">c:\users\lenovo\desktop\stage1\presidio\core\data_steward.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="json.html">json</a><br>
+</td><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"><a href="pandas.html">pandas</a><br>
+</td><td class="multicolumn"><a href="re.html">re</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-apply_recommendations"><strong>apply_recommendations</strong></a>(df: pandas.core.frame.DataFrame, feedback: Dict[str, Dict[str, Dict[str, Any]]], jobs_csv_path: str = 'assets/generelized_jobs.csv') -&gt; pandas.core.frame.DataFrame</dt><dd><span class="code">Apply&nbsp;steward&nbsp;feedback&nbsp;to&nbsp;a&nbsp;*copy*&nbsp;of&nbsp;df.</span></dd></dl>
+ <dl><dt><a name="-generalize_date_to_decade"><strong>generalize_date_to_decade</strong></a>(val: str)</dt><dd><span class="code">Convert&nbsp;date&nbsp;to&nbsp;decade&nbsp;string:<br>
+'1983-11-12'&nbsp;-&gt;&nbsp;'1980s'<br>
+'2003'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;&nbsp;'2000s'<br>
+'2025/04/04'&nbsp;-&gt;&nbsp;'2020s'<br>
+If&nbsp;parsing&nbsp;fails,&nbsp;return&nbsp;original.</span></dd></dl>
+ <dl><dt><a name="-generalize_job_from_map"><strong>generalize_job_from_map</strong></a>(title: str, jobs_map: Dict[str, str], default='other')</dt><dd><span class="code">Generalize&nbsp;job&nbsp;title&nbsp;using&nbsp;the&nbsp;jobs&nbsp;mapping.<br>
+The&nbsp;mapping&nbsp;was&nbsp;generated&nbsp;so&nbsp;it&nbsp;might&nbsp;contain&nbsp;errors</span></dd></dl>
+ <dl><dt><a name="-load_jobs_map"><strong>load_jobs_map</strong></a>(csv_path: str) -&gt; Dict[str, str]</dt><dd><span class="code">Load&nbsp;'assets/generelized_jobs.csv'&nbsp;with&nbsp;columns:&nbsp;Job&nbsp;Title,Category<br>
+Build&nbsp;a&nbsp;case-insensitive&nbsp;dict:&nbsp;normalized_title&nbsp;-&gt;&nbsp;category</span></dd></dl>
+ <dl><dt><a name="-to_number_if_possible"><strong>to_number_if_possible</strong></a>(x: str)</dt><dd><span class="code">try&nbsp;to&nbsp;convert&nbsp;a&nbsp;string&nbsp;to&nbsp;a&nbsp;number&nbsp;if&nbsp;possible</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>Dict</strong> = typing.Dict</td></tr></table>
+</body></html>

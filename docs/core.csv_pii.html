@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module core.csv_pii</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="core.html" class="white">core</a>.csv_pii</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Clenovo%5Cdesktop%5Cstage1%5Cpresidio%5Ccore%5Ccsv_pii.py">c:\users\lenovo\desktop\stage1\presidio\core\csv_pii.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="json.html">json</a><br>
+</td><td class="multicolumn"><a href="pandas.html">pandas</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-adaptive_sampling"><strong>adaptive_sampling</strong></a>(rows, threshold=0.3, min_samples=30)</dt><dd><span class="code">we&nbsp;use&nbsp;this&nbsp;adaptive&nbsp;sampling&nbsp;to&nbsp;sample&nbsp;a&nbsp;percetage&nbsp;of&nbsp;the&nbsp;rows&nbsp;if&nbsp;the&nbsp;number&nbsp;or&nbsp;rows&nbsp;is&nbsp;low&nbsp;and&nbsp;a&nbsp;<br>
+fixed&nbsp;number&nbsp;of&nbsp;rows&nbsp;if&nbsp;the&nbsp;number&nbsp;of&nbsp;rows&nbsp;is&nbsp;high</span></dd></dl>
+ <dl><dt><a name="-full_analyze_mask"><strong>full_analyze_mask</strong></a>(column, analyzer)</dt><dd><span class="code">this&nbsp;function&nbsp;will&nbsp;analyze&nbsp;the&nbsp;whole&nbsp;column&nbsp;and&nbsp;mask&nbsp;it&nbsp;at&nbsp;the&nbsp;same&nbsp;time&nbsp;to&nbsp;save&nbsp;resources<br>
+it&nbsp;will&nbsp;return&nbsp;a&nbsp;list&nbsp;of&nbsp;masked&nbsp;texts</span></dd></dl>
+ <dl><dt><a name="-mask"><strong>mask</strong></a>(text: str, entities)</dt><dd><span class="code">this&nbsp;is&nbsp;simplified&nbsp;masking&nbsp;function&nbsp;based&nbsp;on&nbsp;the&nbsp;rgdp&nbsp;glossary<br>
+it&nbsp;can&nbsp;be&nbsp;more&nbsp;sofisticated&nbsp;to&nbsp;treat&nbsp;each&nbsp;entity&nbsp;type&nbsp;differently<br>
+but&nbsp;for&nbsp;now&nbsp;it&nbsp;will&nbsp;just&nbsp;mask&nbsp;the&nbsp;entities&nbsp;with&nbsp;the&nbsp;category&nbsp;name</span></dd></dl>
+ <dl><dt><a name="-process_csv"><strong>process_csv</strong></a>(csv_path)</dt><dd><span class="code">this&nbsp;a&nbsp;wrapper&nbsp;function&nbsp;to&nbsp;process&nbsp;the&nbsp;csv&nbsp;file<br>
+it&nbsp;will&nbsp;read&nbsp;the&nbsp;csv&nbsp;file,&nbsp;score&nbsp;the&nbsp;headers,&nbsp;sample&nbsp;analyze&nbsp;the&nbsp;rows&nbsp;and&nbsp;mask&nbsp;the&nbsp;entities<br>
+it&nbsp;will&nbsp;return&nbsp;the&nbsp;masked&nbsp;dataframe&nbsp;and&nbsp;a&nbsp;report&nbsp;of&nbsp;the&nbsp;masking</span></dd></dl>
+ <dl><dt><a name="-sample_analyze"><strong>sample_analyze</strong></a>(headers, rows, analyzer, scores)</dt><dd><span class="code">this&nbsp;function&nbsp;will&nbsp;sample&nbsp;the&nbsp;rows&nbsp;and&nbsp;analyze&nbsp;them&nbsp;to&nbsp;create&nbsp;a&nbsp;profile&nbsp;for&nbsp;each&nbsp;header<br>
+it&nbsp;will&nbsp;return&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;header&nbsp;as&nbsp;key&nbsp;and&nbsp;the&nbsp;profile&nbsp;as&nbsp;value</span></dd></dl>
+ <dl><dt><a name="-score_header"><strong>score_header</strong></a>(headers, threshhold=70)</dt><dd><span class="code">this&nbsp;function&nbsp;uses&nbsp;token_Set_ration&nbsp;to&nbsp;match&nbsp;headers&nbsp;with&nbsp;known&nbsp;entities&nbsp;sysnonyms<br>
+then&nbsp;returns&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;header&nbsp;as&nbsp;key&nbsp;and&nbsp;the&nbsp;matched&nbsp;entity&nbsp;and&nbsp;score&nbsp;as&nbsp;value<br>
+if&nbsp;no&nbsp;match&nbsp;is&nbsp;found,&nbsp;the&nbsp;entity&nbsp;is&nbsp;set&nbsp;to&nbsp;None</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>GDPR_CATEGORIES</strong> = {'BLOOD_TYPE': 'Sensitive Data', 'CREDIT_CARD': 'Financial Data', 'DRIVER_LICENSE': 'Identifiers', 'EMAIL_ADDRESS': 'Personal Data', 'GENDER_DECLARED': 'Sensitive Data', 'IMPLIED_GENDER': 'Sensitive Data', 'INCOME_AMOUNT': 'Financial Data', 'INSURANCE_NUMBER': 'Identifiers', 'INTERNAL_ID': 'Identifiers', 'JOB_TITLE': 'Organizational Data', ...}<br>
+<strong>MIN_SCORE</strong> = 0.6<br>
+<strong>csv_file</strong> =      text_id                                    ...laude Auger, 84678 Gérard
+
+[300 rows x 9 columns]<br>
+<strong>f</strong> = &lt;_io.TextIOWrapper name='assets/masking_report.json' mode='w' encoding='cp1252'&gt;<br>
+<strong>headers</strong> = ['text_id', 'text', 'PERSON', 'ID_MAROC', 'PHONE_NUMBER', 'EMAIL_ADDRESS', 'IBAN_CODE', 'DATE_TIME', 'LOCATION']<br>
+<strong>masked_df</strong> =     text_id                                     ...          NaN  &lt;LOCATION&gt;
+
+[300 rows x 9 columns]<br>
+<strong>masking_report</strong> = defaultdict(&lt;function &lt;lambda&gt; at 0x0000014F7DB9...faultdict(&lt;class 'int'&gt;, {'Uncategorized': 72})})<br>
+<strong>report</strong> = defaultdict(&lt;function &lt;lambda&gt; at 0x0000014F7DB9...faultdict(&lt;class 'int'&gt;, {'Uncategorized': 72})})<br>
+<strong>scores</strong> = {'DATE_TIME': {'entity': 'DATE_TIME', 'score': 100.0}, 'EMAIL_ADDRESS': {'entity': 'EMAIL_ADDRESS', 'score': 100.0}, 'IBAN_CODE': {'entity': 'MIBAN_CODE', 'score': 100.0}, 'ID_MAROC': {'entity': None, 'score': 42.10526315789474}, 'LOCATION': {'entity': 'LOCATION', 'score': 100.0}, 'PERSON': {'entity': 'PERSON', 'score': 100.0}, 'PHONE_NUMBER': {'entity': 'PHONE_NUMBER', 'score': 100.0}, 'text': {'entity': None, 'score': 57.142857142857146}, 'text_id': {'entity': None, 'score': 57.142857142857146}}</td></tr></table>
+</body></html>

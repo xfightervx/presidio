@@ -11,6 +11,9 @@ from .csv_pii import full_analyze_mask  # uses analyzer to mask per-cell
 
 
 def to_number_if_possible(x: str):
+    """
+    try to convert a string to a number if possible
+    """
     try:
         if isinstance(x, (int, float)) and not math.isnan(x):
             return x
@@ -38,6 +41,10 @@ def load_jobs_map(csv_path: str) -> Dict[str, str]:
 
 
 def generalize_job_from_map(title: str, jobs_map: Dict[str, str], default="other"):
+    """
+    Generalize job title using the jobs mapping.
+    The mapping was generated so it might contain errors
+    """
     if title is None or (isinstance(title, float) and math.isnan(title)):
         return title
     t = str(title).strip().lower()

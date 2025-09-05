@@ -26,6 +26,14 @@ app.add_middleware(
 )
 
 def flatten_recommendations(column_actions: dict) -> list:
+    """
+    this function flattens the recommendations (it was introduced later into the devoloppement for compatibility reasons)
+    Parameters:
+      - column_actions: A dictionary where keys are column names and values are lists of action dictionaries.
+
+    Returns:
+      - A flattened list of action dictionaries with the corresponding column name added.
+    """
     all_recommendations = []
     for col, actions in column_actions.items():
         for act in actions:
@@ -39,6 +47,9 @@ def flatten_recommendations(column_actions: dict) -> list:
 
 @app.post("/recommend")
 async def recommend(file: UploadFile = File(...)):
+    """
+    Endpoint to receive a CSV file and return recommendations.
+    """
     try:
         df = pd.read_csv(file.file)
         recommendations = recommend_actions(df)

@@ -1,7 +1,7 @@
 import pandas as pd
 import re
 
-# --- Enhanced Regex patterns ---
+# Some global variables for the matching if any other indicator was to be added a matching regex will have to be added here
 EMAIL_RE = re.compile(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
 DATE_RE = re.compile(
     r"^(?:\d{4}[-/]\d{1,2}[-/]\d{1,2}|\d{1,2}[-/]\d{1,2}[-/]\d{4}|\d{4}\d{2}\d{2}|\d{2}\d{2}\d{4})$"
@@ -299,7 +299,9 @@ def get_quality_recommendations(overall_score, duplicate_pct, completeness_score
 
 
 def quality(df: pd.DataFrame) -> dict:
-    """Compute comprehensive quality indicators with enhanced metrics"""
+    """Compute comprehensive quality indicators with enhanced metrics
+    If any others where to be added just define the indicator into a function and then add it the return dictionary
+    """
     return {
         "completeness": comp(df),
         "duplicates": dup(df),
