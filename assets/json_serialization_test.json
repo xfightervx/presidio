@@ -1,0 +1,57 @@
+{
+    "PERSON" :{
+    "text": "The column contains personal names and should not be filled with a specific name due to privacy concerns.",
+    "value": {
+      "mask": {"status": "accepted"}
+    }
+    },
+    "ID_MAROC": {
+    "text": "The column likely contains sensitive identifiers, and filling or masking could compromise privacy.",
+    "value": {
+      "drop": {"status": "rejected"},
+      "mask": {"status": "accepted"}
+    }
+    },
+    "PHONE_NUMBER": {
+    "text": "The column contains phone numbers and should be masked to maintain privacy.",
+    "value": {
+      "fill": {"status": "rejected"},
+      "mask": {"status": "accepted"}
+    }
+    },    
+    "EMAIL_ADDRESS": {
+    "text": "The column contains email addresses and should be dropped due to the high percentage of missing values.",
+    "value": {
+      "drop": {"status": "accepted"},
+      "mask": {"status": "rejected"}
+    }
+    },
+    "IBAN_CODE": {
+    "text": "The column likely contains sensitive identifiers, and filling or masking could compromise privacy.",
+    "value": {
+      "drop": {"status": "accepted"},
+      "mask": {"status": "accepted"}
+    }
+    },
+    "DATE_TIME": {
+    "text": "The column contains time-related information and can be generalized or enriched but filling should be done with caution.",
+    "value": {
+      "fill": {"status": "rejected"},
+      "generalize": {"status": "accepted"},
+      "enrich": {"status": "accepted"}
+    }
+    },
+    "LOCATION": {
+    "text": "The column contains location data and should be masked to maintain privacy.",
+    "value": {
+      "fill": {"status": "rejected"},
+      "mask": {"status": "accepted"}
+    }
+    },
+    "text": {
+    "text": "The column contains text and should be masked to maintain privacy, especially since it contains personal information.",
+    "value": {
+      "mask": {"status": "accepted"}
+    }
+  }
+}

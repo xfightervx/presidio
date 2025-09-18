@@ -1,9 +1,58 @@
-PERSON: [{'action': 'fill', 'reason': 'some values are missing', 'percentage': np.float64(0.23), 'filling': {'mode': 'Vincent'}}, {'action': 'mask', 'reason': 'confirmed PII entity: PERSON', 'gdpr_category': 'Personal Data', 'top_entities': [('PERSON', 26)]}]
-ID_MAROC: [{'action': 'fill', 'reason': 'some values are missing', 'percentage': np.float64(0.47), 'filling': {'mode': 'AC05974'}}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'CIN', 'top_detected_entities': [('CIN', 159), ('PERSON', 6), ('LOCATION', 2)], 'percentage of PII': 53.0}]
-PHONE_NUMBER: [{'action': 'fill', 'reason': 'some values are missing', 'percentage': np.float64(0.53), 'filling': {'mean': np.float64(106581718463.75887), 'median': np.float64(9847088151.0), 'max': np.float64(212699238922.0), 'min': np.float64(388356267.0)}}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'UK_NHS', 'top_detected_entities': [('UK_NHS', 7)], 'percentage of PII': 2.3333333333333335}]
-EMAIL_ADDRESS: [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': np.float64(0.77)}, {'action': 'mask', 'reason': 'confirmed PII entity: EMAIL_ADDRESS', 'gdpr_category': 'Personal Data', 'top_entities': [('EMAIL_ADDRESS', 10)]}]
-IBAN_CODE: [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': np.float64(0.76)}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'IBAN_CODE', 'top_detected_entities': [('IBAN_CODE', 72), ('PERSON', 6), ('MEDICAL_LICENSE', 4)], 'percentage of PII': 24.0}]
-DATE_TIME: [{'action': 'fill', 'reason': 'some values are missing', 'percentage': np.float64(0.23), 'filling': {'mode': '2025-05-05'}}, {'action': 'generalize', 'reason': 'confirmed PII entity: DATE_TIME', 'gdpr_category': 'Uncategorized', 'top_entities': [('DATE_TIME', 20)]}, {'action': 'enrich', 'reason': 'header matches enrichable cluster', 'cluster': 2, 'suggestions': ['join external source', 'derive from related field', 'add semantic tag']}]
-LOCATION: [{'action': 'fill', 'reason': 'some values are missing', 'percentage': np.float64(0.47), 'filling': {'mode': '1, chemin de Bazin, 07477 Rousset-sur-Maillet'}}, {'action': 'mask', 'reason': 'confirmed PII entity: LOCATION', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 15), ('DATE_TIME', 11), ('LOCATION', 4)]}]
-text_id: [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'LOCATION', 'top_detected_entities': [('LOCATION', 1)], 'percentage of PII': 0.33333333333333337}]
-text: [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 512), ('DATE_TIME', 291), ('CIN', 159)], 'percentage of PII': 100.0}]
+=== PROMPT ===
+
+{'IBAN_CODE': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 1.0}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 2)], 'percentage of PII': 100.0}, {'action': 'categorize', 'reason': 'Low uniqueness ratio (0.00) and unique count (0)', 'uniqueness_ratio': 0.0, 'unique_count': 0, 'example_categories': {}}], 'DATE_TIME': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 1.0}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 2)], 'percentage of PII': 100.0}, {'action': 'enrich', 'reason': 'header matches enrichable cluster', 'cluster': 2, 'suggestions': ['join external source', 'derive from related field', 'add semantic tag']}, {'action': 'categorize', 'reason': 'Low uniqueness ratio (0.00) and unique count (0)', 'uniqueness_ratio': 0.0, 'unique_count': 0, 'example_categories': {}}], 'text': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 5), ('EMAIL_ADDRESS', 2), ('CIN', 2)], 'percentage of PII': 100.0}], 'PERSON': [{'action': 'mask', 'reason': 'confirmed PII entity: PERSON', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 2)]}], 'ID_MAROC': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'CIN', 'top_detected_entities': [('CIN', 2)], 'percentage of PII': 100.0}], 'EMAIL_ADDRESS': [{'action': 'mask', 'reason': 'confirmed PII entity: EMAIL_ADDRESS', 'gdpr_category': 'Uncategorized', 'top_entities': [('EMAIL_ADDRESS', 2)]}], 'LOCATION': [{'action': 'mask', 'reason': 'confirmed PII entity: LOCATION', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 2), ('LOCATION', 1)]}]}
+
+===GROUPED===
+{'IBAN_CODE': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 1.0}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 2)], 'percentage of PII': 100.0}, {'action': 'categorize', 'reason': 'Low uniqueness ratio (0.00) and unique count (0)', 'uniqueness_ratio': 0.0, 'unique_count': 0, 'example_categories': {}}], 'DATE_TIME': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 1.0}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 2)], 'percentage of PII': 100.0}, {'action': 'enrich', 'reason': 'header matches enrichable cluster', 'cluster': 2, 'suggestions': ['join external source', 'derive from related field', 'add semantic tag']}, {'action': 'categorize', 'reason': 'Low uniqueness ratio (0.00) and unique count (0)', 'uniqueness_ratio': 0.0, 'unique_count': 0, 'example_categories': {}}], 'text': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 5), ('EMAIL_ADDRESS', 2), ('CIN', 2)], 'percentage of PII': 100.0}], 'PERSON': [{'action': 'mask', 'reason': 'confirmed PII entity: PERSON', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 2)]}], 'ID_MAROC': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'CIN', 'top_detected_entities': [('CIN', 2)], 'percentage of PII': 100.0}], 'EMAIL_ADDRESS': [{'action': 'mask', 'reason': 'confirmed PII entity: EMAIL_ADDRESS', 'gdpr_category': 'Uncategorized', 'top_entities': [('EMAIL_ADDRESS', 2)]}], 'LOCATION': [{'action': 'mask', 'reason': 'confirmed PII entity: LOCATION', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 2), ('LOCATION', 1)]}]}
+
+=== RAW ===
+Here's the recommended JSON output based on the given input data and the rules provided:
+
+```
+{
+    "IBAN_CODE": {
+        "text": "High percentage of missing values (100%) suggests dropping this column, but since it is a PII entity, it should be masked instead.",
+        "value": {
+            "mask": {"status":"accepted", "value":null}
+        }
+    },
+    "DATE_TIME": {
+        "text": "High percentage of missing values (100%) suggests dropping this column, but since it is a PII entity, it should be masked instead. Additionally, there's an opportunity to enrich the data by joining external sources or deriving from related fields.",
+        "value": {
+            "mask": {"status":"accepted", "value":null},
+            "enrich": {"status":"rejected", "value":null}
+        }
+    },
+    "text": {
+        "text": "Detected multiple PII entities: PERSON (5), EMAIL_ADDRESS (2), CIN (2). Consider masking these entities to maintain privacy.",
+        "value": {
+            "mask": {"status":"accepted", "value":null}
+        }
+    },
+    "PERSON": {
+        "text": "Confirmed PII entity: PERSON. Mask this data to maintain privacy.",
+        "value": {
+            "mask": {"status":"accepted", "value":null}
+        }
+    },
+    "ID_MAROC": {
+        "text": "Detected PII entities, top guessed entity is CIN. Mask this data to maintain privacy.",
+        "value": {
+            "mask": {"status":"accepted", "value":null}
+        }
+    },
+    "EMAIL_ADDRESS": {
+        "text": "Confirmed PII entity: EMAIL_ADDRESS. Mask this data to maintain privacy.",
+        "value": {
+            "mask": {"status":"accepted", "value":null}
+        }
+    },
+    "LOCATION": {
+        "text": "Confirmed PII entity: LOCATION. Since it is also associated with the PERSON entity, mask this data to maintain privacy.",
+        "value": {
+            "mask": {"status":"accepted", "value":null}
+        }
+    }
+}
+```
+

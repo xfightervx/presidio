@@ -25,39 +25,32 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-def flatten_recommendations(column_actions: dict) -> list:
-    """
-    this function flattens the recommendations (it was introduced later into the devoloppement for compatibility reasons)
-    Parameters:
-      - column_actions: A dictionary where keys are column names and values are lists of action dictionaries.
-
-    Returns:
-      - A flattened list of action dictionaries with the corresponding column name added.
-    """
-    all_recommendations = []
-    for col, actions in column_actions.items():
-        for act in actions:
-            act["column"] = col
-            # Convert np.float64 to native float
-            for k, v in act.items():
-                if isinstance(v, (np.float32, np.float64)):
-                    act[k] = float(v)
-            all_recommendations.append(act)
-    return all_recommendations
+## NOTE: Flattening logic removed per request—backend now assumes the new
+## serialized recommendation format produced by recommend_actions and returns
+## it verbatim.
 
 @app.post("/recommend")
 async def recommend(file: UploadFile = File(...)):
-    """
-    Endpoint to receive a CSV file and return recommendations.
+    """Return ONLY the new serialized recommendation format directly.
+
+    Expected output from recommend_actions(df):
+      {
+        "<COLUMN>": {
+            "manual": [ {...action dict...}, ... ],
+            "llm": <string | {text:..., value:{...}}>  # depends on upstream
+        },
+        ...
+      }
+    We do not reshape or flatten; the structure is persisted and returned verbatim.
     """
     try:
         df = pd.read_csv(file.file)
-        recommendations = recommend_actions(df)
-        flatted = flatten_recommendations(recommendations)
-        with open("logs/recommendations.json", "w") as f:
-            json.dump(flatted, f, indent=2)
-        return JSONResponse(content=flatted)
+        rec = recommend_actions(df)
+        with open("logs/recommendations.json", "w", encoding="utf-8") as f:
+            json.dump(rec, f, indent=2, ensure_ascii=False)
+        return JSONResponse(content=rec)
     except Exception as e:
+        print(f"DEBUG: Error in recommend: {e}")
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
 @app.post("/feedback")

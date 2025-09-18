@@ -1,50 +1,34 @@
 {
-  "PERSON": {
+  "text": {
     "mask": {
-      "status": "accepted",
-      "value": null
-    }
-  },
-  "ID_MAROC": {
-    "mask": {
-      "status": "accepted",
-      "value": null
-    }
-  },
-  "PHONE_NUMBER": {
-    "mask": {
-      "status": "accepted",
-      "value": null
+      "status": "accept",
+      "value": ""
     }
   },
   "EMAIL_ADDRESS": {
-    "drop": {
-      "status": "accepted",
-      "value": null
+    "mask": {
+      "status": "accept",
+      "value": ""
     }
   },
   "IBAN_CODE": {
-    "drop": {
-      "status": "accepted",
-      "value": null
-    }
+    "action": "accepted",
+    "value": "mask"
   },
   "DATE_TIME": {
-    "generalize": {
-      "status": "accepted",
-      "value": "auto"
-    }
+    "action": "accepted",
+    "value": "mask"
+  },
+  "PERSON": {
+    "action": "accepted",
+    "value": "mask"
+  },
+  "ID_MAROC": {
+    "action": "accepted",
+    "value": "mask"
   },
   "LOCATION": {
-    "mask": {
-      "status": "accepted",
-      "value": null
-    }
-  },
-  "text": {
-    "mask": {
-      "status": "accepted",
-      "value": null
-    }
+    "action": "accepted",
+    "value": "mask"
   }
 }

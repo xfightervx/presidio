@@ -128,7 +128,7 @@ def full_analyze_mask(column, analyzer):
         if prev:
             selected.append(prev)
             for r in selected:
-                cat = GDPR_CATEGORIES.get(r.entity_type, "Uncategorized")
+                cat = r.entity_type
                 report[column.name][cat] += 1
         masked_text = mask(cell, selected)
         masked.append(masked_text)
@@ -147,7 +147,7 @@ def mask(text: str, entities):
         start = entity.start if hasattr(entity, "start") else entity["start"]
         end_pos = entity.end if hasattr(entity, "end") else entity["end"]
         label = entity.entity_type if hasattr(entity, "entity_type") else entity["entity_type"]
-        category = GDPR_CATEGORIES.get(label, "Uncategorized")
+        category = label
 
         masked += text[last_end:start]
         masked += f"<{category}>"

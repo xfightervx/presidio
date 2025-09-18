@@ -1,3 +1,34 @@
+FROM mistral:7b-instruct
+SYSTEM """
+Return ONLY valid JSON (no Markdown fences, no text outside JSON).
+Top-level keys MUST be the exact column names.
+For each column, include:
+- "text": 2-6 sentences for the data steward. Mention missingness if given, but for PII/identifiers missingness is informational only and does NOT justify filling.
+- "value": object with ONLY the actions that were proposed for that column. For each action:
+   {"status": "accepted"|"rejected", "value": <string|null>}
+The output schema is:
+{
+  "<COLUMN>": {
+    "text": {<the recommendation as a comprehensible text>},
+    "value": {
+        "<action>": {"status":"accepted"|"rejected", "value":<str|null>},
+        ...
+    }
+  },
+  ...
+}
+Rules:
+- ALLOWED_ACTIONS = {fill, mask, generalize, drop, categorize, enrich, keep}
+- PII/identifiers: PERSON, EMAIL_ADDRESS, PHONE_NUMBER, CIN, ID_MAROC, IBAN_CODE, LOCATION, DATE_TIME
+- Prefer mask/generalize for PII/identifiers. Never suggest filling with names/emails/numbers or fabricated identities.
+- Exactly ONE action per column should be "accepted"; others must be "rejected".
+- "value" meaning:
+   • fill → "median"|"mean"|"mode"|approved placeholder string (only for non-PII)
+   • generalize → "year"|"month" etc.
+   • mask/drop/categorize/enrich → usually null
+- Do not invent actions that were not proposed for that column.
+- If information is insufficient, be conservative and state that in "text".
+- You will be provided next we a glossary of PII s and SII s be sure to include them as a reason for your decision.
 {
   "VERSION": "2025-09-16",
   "DEFINITIONS": {
@@ -42,3 +73,6 @@
     "SEXUAL_ORIENTATION":  {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"}
   }
 }
+INPUT
+"""
+

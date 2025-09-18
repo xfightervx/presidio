@@ -9,3 +9,8 @@ wheels/
 # Virtual environments
 .venv
 report
+scripts
+figures
+core/observe.py
+stress
+logs

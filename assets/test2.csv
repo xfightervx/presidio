@@ -1,0 +1,13 @@
+﻿text_id,text,PERSON,ID_MAROC,PHONE_NUMBER,EMAIL_ADDRESS,IBAN_CODE,DATE_TIME,LOCATION
+1,"Contrat de location :
+- Locataire : Grégoire-Julien Chauvet
+- CIN : HK56938
+- Téléphone : +212637506497
+- Adresse : 62, avenue Célina Caron, 97389 Bernard
+- Email : henriettecourtois@example.org",Grégoire,HK56938,+212637506497,henriettecourtois@example.org,,,"62, avenue Célina Caron, 97389 Bernard"
+2,"Contrat de location :
+- Locataire : Christelle Raymond-Hamon
+- CIN : NF90273
+- Téléphone : +212613130719
+- Adresse : 96, rue de Rivière, 06823 De Sousa-sur-Chevalier
+- Email : tpelletier@example.org",Christelle Raymond,NF90273,+212613130719,tpelletier@example.org,,,"96, rue de Rivière, 06823 De Sousa-sur-Chevalier"

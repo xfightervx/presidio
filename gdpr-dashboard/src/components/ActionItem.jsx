@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function ActionItem({ action, column, onChange }) {
-  const [decision, setDecision] = useState("");
-  const [comment, setComment] = useState("");
+export default function ActionItem({ action, column, onChange, feedback }) {
+  const [decision, setDecision] = useState(feedback?.status || "");
+  const [comment, setComment] = useState(feedback?.value || "");
+
+  // Update local state when feedback prop changes
+  useEffect(() => {
+    setDecision(feedback?.status || "");
+    setComment(feedback?.value || "");
+  }, [feedback]);
 
   const handleUpdate = (d, c) => {
     setDecision(d);

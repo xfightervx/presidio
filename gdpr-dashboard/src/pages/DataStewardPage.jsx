@@ -1,26 +1,18 @@
 import React, { useState } from "react";
-import RecommendationCard from "../components/RecommendationCard";
-
-// Helper: group flat API array into { [column]: Recommendation[] }
-function groupByColumn(items = []) {
-  return items.reduce((acc, item) => {
-    const col = item.column || "unknown";
-    if (!acc[col]) acc[col] = [];
-    acc[col].push(item);
-    return acc;
-  }, {});
-}
+import ColumnCard from "../components/ColumnCard";
 
 export default function DataStewardPage() {
   const [file, setFile] = useState(null);
-  const [grouped, setGrouped] = useState({}); // { column: Recommendation[] }
-  const [feedback, setFeedback] = useState({}); // { column: { action: {status,value} } }
+  const [grouped, setGrouped] = useState({}); // { column: [manual action objects] }
+  const [llmPlan, setLlmPlan] = useState({}); // { column: { text, value } }
+  const [feedback, setFeedback] = useState({}); // manual feedback: { column: { action: {status,value} } }
+  const [llmDecisions, setLlmDecisions] = useState({}); // { column: "accept"|"reject" }
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [downloadUrl, setDownloadUrl] = useState(null);
   const [statusMsg, setStatusMsg] = useState("");
 
-  // called by child cards
+  // called by child cards for manual feedback
   const handleFeedbackChange = (column, action, status, value = null) => {
     setFeedback((prev) => ({
       ...prev,
@@ -31,11 +23,21 @@ export default function DataStewardPage() {
     }));
   };
 
+  // called by child cards for LLM feedback
+  const handleLLMFeedback = (column, decision) => {
+    setLlmDecisions((prev) => ({
+      ...prev,
+      [column]: decision,
+    }));
+  };
+
   const onPickFile = (e) => {
     setFile(e.target.files?.[0] || null);
     setError("");
     setGrouped({});
-    setFeedback({});
+  setLlmPlan({});
+  setFeedback({});
+  setLlmDecisions({});
     setDownloadUrl(null);
     setStatusMsg("");
   };
@@ -60,12 +62,31 @@ export default function DataStewardPage() {
       });
       if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const data = await res.json();
-
-      // backend returns a flat array of items with a "column" field
-      const groupedData = Array.isArray(data)
-        ? groupByColumn(data)
-        : groupByColumn(data.recommendations || []);
+      // New backend returns ONLY serialized format:
+      // { column: { manual: [...], llm: <string | {text, value}> } }
+      const groupedData = {};
+      const llmPlanData = {};
+      Object.entries(data || {}).forEach(([col, entry]) => {
+        if (!entry || typeof entry !== 'object') return;
+        const manual = Array.isArray(entry.manual)
+          ? entry.manual
+          : entry.manual
+            ? (Array.isArray(entry.manual) ? entry.manual : [entry.manual])
+            : [];
+        groupedData[col] = manual;
+        const rawLlm = entry.llm;
+        let text = "";
+        let value = {};
+        if (rawLlm && typeof rawLlm === 'object' && !Array.isArray(rawLlm)) {
+          text = rawLlm.text || "";
+          value = rawLlm.value || {};
+        } else if (typeof rawLlm === 'string') {
+          text = rawLlm;
+        }
+        llmPlanData[col] = { text, value };
+      });
       setGrouped(groupedData);
+      setLlmPlan(llmPlanData);
       setStatusMsg("✅ Recommendations loaded.");
     } catch (err) {
       console.error(err);
@@ -86,7 +107,26 @@ export default function DataStewardPage() {
 
     const form = new FormData();
     form.append("file", file); // send original file back
-    form.append("feedback", JSON.stringify(feedback)); // send user choices
+    
+    // Build feedback payload matching backend apply_recommendations contract:
+    // { column: { action: { status, value } } }
+    // 1. Start with manual per-action decisions.
+    // 2. For each column where user accepted LLM plan, merge llmPlan[column].value (already same shape)
+    //    without overwriting manual explicit decisions unless they are absent.
+    // Build legacy feedback format:
+    // For each column:
+    //  - if LLM accepted -> use llmPlan[column].value
+    //  - else use manual feedback (if any)
+    const finalFeedback = {};
+    Object.keys(grouped).forEach((col) => {
+      const llmAccepted = llmDecisions[col] === 'accept';
+      if (llmAccepted && llmPlan[col] && llmPlan[col].value && Object.keys(llmPlan[col].value).length > 0) {
+        finalFeedback[col] = llmPlan[col].value;
+      } else if (feedback[col] && Object.keys(feedback[col]).length > 0) {
+        finalFeedback[col] = feedback[col];
+      }
+    });
+    form.append("feedback", JSON.stringify(finalFeedback));
 
     try {
       const res = await fetch("http://localhost:8000/feedback", {
@@ -112,7 +152,9 @@ export default function DataStewardPage() {
   const resetAll = () => {
     setFile(null);
     setGrouped({});
+    setLlmPlan({});
     setFeedback({});
+  setLlmDecisions({});
     setError("");
     setStatusMsg("");
     setDownloadUrl(null);
@@ -184,15 +226,25 @@ export default function DataStewardPage() {
 
         {/* Cards */}
         {hasRecs ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-            {Object.entries(grouped).map(([column, actions]) => (
-              <RecommendationCard
-                key={column}
-                columnName={column}
-                recommendations={actions}
-                onFeedbackChange={handleFeedbackChange}
-              />
-            ))}
+          <div className="grid grid-cols-1 gap-4">
+            {Object.entries(grouped).map(([column, actions]) => {
+              const columnLlmData = llmPlan[column] || {};
+              const llmText = columnLlmData.text || "";
+              const llmAccepted = llmDecisions[column] || "";
+
+              return (
+                <ColumnCard
+                  key={column}
+                  column={column}
+                  actions={actions}
+                  llmSuggestion={llmText}
+                  llmAccepted={llmAccepted}
+                  onLLMFeedback={handleLLMFeedback}
+                  onManualFeedback={handleFeedbackChange}
+                  manualFeedback={feedback[column] || {}}
+                />
+              );
+            })}
           </div>
         ) : (
           <div className="text-gray-500 text-sm">
