@@ -1,23 +1,28 @@
 {
+  "text_id": {
+    "LOCATION": 1
+  },
   "text": {
-    "PERSON": 479,
-    "CIN": 138,
+    "PERSON": 512,
+    "CIN": 154,
     "PHONE_NUMBER": 65,
+    "DATE_TIME": 291,
     "EMAIL_ADDRESS": 69,
-    "LOCATION": 37,
-    "IBAN_CODE": 61,
-    "DATE_TIME": 258
+    "LOCATION": 35,
+    "IBAN_CODE": 70,
+    "NRP": 8
   },
   "ID_MAROC": {
-    "CIN": 147,
-    "PERSON": 5,
-    "LOCATION": 4,
-    "NRP": 3
+    "CIN": 149,
+    "LOCATION": 2,
+    "PERSON": 6,
+    "NRP": 2
   },
   "PHONE_NUMBER": {
+    "DATE_TIME": 35,
     "UK_NHS": 8,
-    "NRP": 3,
-    "DATE_TIME": 10,
+    "NRP": 2,
+    "LOCATION": 1,
     "PERSON": 1
   },
   "IBAN_CODE": {

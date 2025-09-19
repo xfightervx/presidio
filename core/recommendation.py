@@ -44,6 +44,84 @@ from .util import serialize_recommendation
 
 NA_THRESHOLD = 0.6
 GENERALIZED_ENTITIES = ["DATE_TIME", "JOB_TITLE"]
+_LLM_HEADER = """
+SYSTEM
+Return ONLY valid JSON (no Markdown fences, no text outside JSON).
+Top-level keys MUST be the exact column names.
+For each column, include:
+- "text": 2-6 sentences for the data steward. Mention missingness if given, but for PII/identifiers missingness is informational only and does NOT justify filling.
+- "value": object with ONLY the actions that were proposed for that column. For each action:
+   {"status": "accepted"|"rejected", "value": <string|null>}
+The output schema is:
+{
+  "<COLUMN>": {
+    "text": {<the recommendation as a comprehensible text>},
+    "value": {
+        "<action>": {"status":"accepted"|"rejected", "value":<str|null>},
+        ...
+    }
+  },
+  ...
+}
+Rules:
+- ALLOWED_ACTIONS = {fill, mask, generalize, drop, categorize, enrich, keep}
+- PII/identifiers: PERSON, EMAIL_ADDRESS, PHONE_NUMBER, CIN, ID_MAROC, IBAN_CODE, LOCATION, DATE_TIME
+- Prefer mask/generalize for PII/identifiers. Never suggest filling with names/emails/numbers or fabricated identities.
+- Exactly ONE action per column should be "accepted"; others must be "rejected".
+- "value" meaning:
+   • fill → "median"|"mean"|"mode"|approved placeholder string (only for non-PII)
+   • generalize → "year"|"month" etc.
+   • mask/drop/categorize/enrich → usually null
+- Do not invent actions that were not proposed for that column.
+- If information is insufficient, be conservative and state that in "text".
+- You will be provided next we a glossary of PII s and SII s be sure to include them as a reason for your decision.
+{
+  "VERSION": "2025-09-16",
+  "DEFINITIONS": {
+    "PII": "Personal data that can identify or relate to an individual but is not a GDPR Article 9 special category. Requires lawful basis, minimization, and security.",
+    "SII": "Sensitive/special-category personal data (GDPR Art. 9) requiring an additional Article 9(2) condition. In Morocco (Law 09-08), 'données sensibles' typically need CNDP prior authorization."
+  },
+  "ALIASES": {
+    "MIBAN_CODE": "IBAN_CODE"
+  },
+  "ENTITIES": {
+    "PERSON":              {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "EMAIL_ADDRESS":       {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "PHONE_NUMBER":        {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "LOCATION":            {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "mask"},
+    "POSTAL_CODE":         {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "generalize"},
+    "DATE_TIME":           {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "generalize"},
+    "DATE_OF_BIRTH":       {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "generalize"},
+    "AGE":                 {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "low",    "default_action": "generalize"},
+    "JOB_TITLE":           {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "mask"},
+    "NATIONALITY":         {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "mask"},
+
+    "CIN":                 {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "ID_MAROC":            {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "PASSPORT":            {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "DRIVER_LICENSE":      {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "INSURANCE_NUMBER":    {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "INTERNAL_ID":         {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "tokenize"},
+
+    "IBAN_CODE":           {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "BANK_ACCOUNT":        {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "CREDIT_CARD":         {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "critical","default_action": "mask"},
+
+    "HEALTH_DATA":         {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "MEDICAL_CONDITION":   {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "BLOOD_TYPE":          {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "GENETIC_DATA":        {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "BIOMETRIC_DATA_ID":   {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "RACIAL_ETHNIC_ORIGIN":{"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "POLITICAL_OPINION":   {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "RELIGIOUS_BELIEF":    {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "TRADE_UNION_MEMBERSHIP":{"category": "SII","gdpr": {"special_category": true}, "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "SEXUAL_ORIENTATION":  {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"}
+  }
+}
+INPUT
+"""
+
 
 # ────────────────────────────────────────────────────────────────────────────
 # Basic analyzers (unchanged core logic)
@@ -339,21 +417,17 @@ def recommend_actions(df: pd.DataFrame) -> dict:
         if filtered:
             grouped[col] = filtered
 
-    prompt = "\n" + str(grouped)
+    prompt = _LLM_HEADER + "\n" + str(grouped)
     raw = ask_llm(prompt)
     cleaned = raw
     if isinstance(raw, str):
         cleaned = raw.strip()
-        if cleaned.startswith("```"):
-            # remove code fences and keep json portion
-            cleaned = cleaned.strip("`")
-            i, j = cleaned.find("{"), cleaned.rfind("}")
-            if i != -1 and j != -1:
-                cleaned = cleaned[i:j+1]
+        i, j = cleaned.find("{"), cleaned.rfind("}")
+        if i != -1 and j != -1:
+            cleaned = cleaned[i:j+1]
     else:
         cleaned = ""
 
-    # Try to parse JSON; fall back to empty dict if invalid
     try:
         parsed_plan = json.loads(cleaned) if cleaned else {}
         if not isinstance(parsed_plan, dict):
@@ -361,9 +435,6 @@ def recommend_actions(df: pd.DataFrame) -> dict:
     except Exception:
         parsed_plan = {}
 
-    with open("logs/llm_raw_response.txt", "w", encoding="utf-8") as f:
-        f.write(raw or "")
-    os.makedirs("logs", exist_ok=True)
     try:
         with open("logs/recommendations.log", "w", encoding="utf-8", errors="replace") as f:
             f.write("=== PROMPT ===\n" + prompt + "\n\n")

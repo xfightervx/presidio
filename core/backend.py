@@ -29,10 +29,13 @@ app.add_middleware(
 ## serialized recommendation format produced by recommend_actions and returns
 ## it verbatim.
 
+# NOTE: Per request, the existing recommendation endpoint is disabled.
+# It previously accepted a CSV file and returned freshly computed recommendations.
+#
+# """
 @app.post("/recommend")
 async def recommend(file: UploadFile = File(...)):
     """Return ONLY the new serialized recommendation format directly.
-
     Expected output from recommend_actions(df):
       {
         "<COLUMN>": {
@@ -52,6 +55,24 @@ async def recommend(file: UploadFile = File(...)):
     except Exception as e:
         print(f"DEBUG: Error in recommend: {e}")
         return JSONResponse(content={"error": str(e)}, status_code=500)
+
+# New endpoint: return the content of logs/recommendations.json as-is
+#@app.post("/recommend")
+#async def get_saved_recommendations():
+#    """Return the precomputed recommendations from logs/recommendations.json.
+#
+#    Response: JSON content of the file, or 404 if missing, 500 on parse/IO error.
+#    """
+#    try:
+#        with open("logs/recommendations.json", "r", encoding="utf-8") as f:
+#            data = json.load(f)
+#        return JSONResponse(content=data)
+#    except FileNotFoundError:
+#        raise HTTPException(status_code=404, detail="logs/recommendations.json not found")
+#    except json.JSONDecodeError as e:
+#        raise HTTPException(status_code=500, detail=f"Invalid JSON in recommendations file: {e}")
+#    except Exception as e:
+#        raise HTTPException(status_code=500, detail=f"Failed to read recommendations: {e}")
 
 @app.post("/feedback")
 async def post_feedback(request: Request):

@@ -1,34 +1,71 @@
 {
-  "text": {
+  "PERSON": {
+    "fill": {
+      "status": "rejected"
+    },
     "mask": {
-      "status": "accept",
-      "value": ""
+      "status": "accepted"
+    }
+  },
+  "ID_MAROC": {
+    "fill": {
+      "status": "rejected"
+    },
+    "mask": {
+      "status": "accepted"
+    }
+  },
+  "PHONE_NUMBER": {
+    "fill": {
+      "status": "rejected"
+    },
+    "mask": {
+      "status": "accepted"
     }
   },
   "EMAIL_ADDRESS": {
+    "drop": {
+      "status": "accepted"
+    },
     "mask": {
-      "status": "accept",
-      "value": ""
+      "status": "accepted"
     }
   },
   "IBAN_CODE": {
-    "action": "accepted",
-    "value": "mask"
+    "fill": {
+      "status": "rejected"
+    },
+    "mask": {
+      "status": "accepted"
+    }
   },
   "DATE_TIME": {
-    "action": "accepted",
-    "value": "mask"
-  },
-  "PERSON": {
-    "action": "accepted",
-    "value": "mask"
-  },
-  "ID_MAROC": {
-    "action": "accepted",
-    "value": "mask"
+    "fill": {
+      "status": "accepted"
+    },
+    "generalize": {
+      "status": "accepted"
+    },
+    "enrich": {
+      "status": "accepted"
+    }
   },
   "LOCATION": {
-    "action": "accepted",
-    "value": "mask"
+    "fill": {
+      "status": "rejected"
+    },
+    "mask": {
+      "status": "accepted"
+    }
+  },
+  "text_id": {
+    "mask": {
+      "status": "accepted"
+    }
+  },
+  "text": {
+    "mask": {
+      "status": "accepted"
+    }
   }
 }

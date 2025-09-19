@@ -1,51 +1,210 @@
 {
+  "PERSON": {
+    "manual": [
+      {
+        "action": "fill",
+        "reason": "some values are missing",
+        "percentage": 0.23,
+        "filling": {
+          "mode": "Vincent"
+        }
+      },
+      {
+        "action": "mask",
+        "reason": "confirmed PII entity: PERSON",
+        "gdpr_category": "Uncategorized",
+        "top_entities": [
+          [
+            "PERSON",
+            26
+          ]
+        ]
+      }
+    ],
+    "llm": {
+      "text": "Some values are missing for the PERSON column, so filling is recommended with a mode value such as 'Vincent'. However, it's important to note that confirmed PII entities should never be filled. The data shows that 23% of values are missing, and the most common entity detected is PERSON (26 occurrences).",
+      "value": {
+        "fill": {
+          "status": "rejected"
+        },
+        "mask": {
+          "status": "accepted"
+        }
+      }
+    }
+  },
+  "ID_MAROC": {
+    "manual": [
+      {
+        "action": "fill",
+        "reason": "some values are missing",
+        "percentage": 0.47,
+        "filling": {
+          "mode": "AC05974"
+        }
+      },
+      {
+        "action": "mask",
+        "reason": "detected PII entities",
+        "guessed_entity": "CIN",
+        "top_detected_entities": [
+          [
+            "CIN",
+            159
+          ],
+          [
+            "PERSON",
+            6
+          ],
+          [
+            "LOCATION",
+            2
+          ]
+        ],
+        "percentage of PII": 53.0
+      }
+    ],
+    "llm": {
+      "text": "Both filling and masking have been proposed for the ID_MAROC column due to missing values (47%). However, given that this is a PII entity requiring CNDP prior authorization, we recommend masking it. The most frequent detected entities are ID_MAROC (159 occurrences) and CIN (159 occurrences), with a high percentage of PII (53%).",
+      "value": {
+        "fill": {
+          "status": "rejected"
+        },
+        "mask": {
+          "status": "accepted"
+        }
+      }
+    }
+  },
+  "PHONE_NUMBER": {
+    "manual": [
+      {
+        "action": "fill",
+        "reason": "some values are missing",
+        "percentage": 0.53,
+        "filling": {
+          "mean": 106581718463.75887,
+          "median": 9847088151.0,
+          "max": 212699238922.0,
+          "min": 388356267.0
+        }
+      },
+      {
+        "action": "mask",
+        "reason": "detected PII entities",
+        "guessed_entity": "UK_NHS",
+        "top_detected_entities": [
+          [
+            "UK_NHS",
+            7
+          ]
+        ],
+        "percentage of PII": 2.3333333333333335
+      }
+    ],
+    "llm": {
+      "text": "Some values are missing for the PHONE_NUMBER column, so filling is recommended using the mean (106581718463.75887), median (9847088151.0), max (212699238922.0), or min (388356267.0). However, it's important to note that confirmed PII entities should never be filled. The data shows that 53% of values are missing, and the most common entity detected is UK_NHS (7 occurrences), which may not be relevant to our dataset.",
+      "value": {
+        "fill": {
+          "status": "rejected"
+        },
+        "mask": {
+          "status": "accepted"
+        }
+      }
+    }
+  },
+  "EMAIL_ADDRESS": {
+    "manual": [
+      {
+        "action": "drop",
+        "reason": "high percentage of missing values",
+        "percentage": 0.77
+      },
+      {
+        "action": "mask",
+        "reason": "confirmed PII entity: EMAIL_ADDRESS",
+        "gdpr_category": "Uncategorized",
+        "top_entities": [
+          [
+            "EMAIL_ADDRESS",
+            10
+          ]
+        ]
+      }
+    ],
+    "llm": {
+      "text": "Given the high percentage of missing values (77%), it's recommended to drop this column. Additionally, confirmed PII entities should never be dropped. The data shows that the most common detected entity is EMAIL_ADDRESS (10 occurrences).",
+      "value": {
+        "drop": {
+          "status": "accepted"
+        },
+        "mask": {
+          "status": "accepted"
+        }
+      }
+    }
+  },
   "IBAN_CODE": {
     "manual": [
       {
         "action": "drop",
         "reason": "high percentage of missing values",
-        "percentage": 1.0
+        "percentage": 0.76
       },
       {
         "action": "mask",
         "reason": "detected PII entities",
-        "guessed_entity": "PERSON",
+        "guessed_entity": "IBAN_CODE",
         "top_detected_entities": [
           [
+            "IBAN_CODE",
+            72
+          ],
+          [
             "PERSON",
-            2
+            6
+          ],
+          [
+            "MEDICAL_LICENSE",
+            4
           ]
         ],
-        "percentage of PII": 100.0
-      },
-      {
-        "action": "categorize",
-        "reason": "Low uniqueness ratio (0.00) and unique count (0)",
-        "uniqueness_ratio": 0.0,
-        "unique_count": 0,
-        "example_categories": {}
+        "percentage of PII": 24.0
       }
     ],
-    "llm": "We don t have recommendation for this column"
+    "llm": {
+      "text": "Both filling and masking have been proposed for the IBAN_CODE column due to missing values (76%). However, given that this is a PII entity requiring CNDP prior authorization, we recommend masking it. The most frequent detected entities are IBAN_CODE (72 occurrences) and PERSON (6 occurrences), with a high percentage of PII (24%).",
+      "value": {
+        "fill": {
+          "status": "rejected"
+        },
+        "mask": {
+          "status": "accepted"
+        }
+      }
+    }
   },
   "DATE_TIME": {
     "manual": [
       {
-        "action": "drop",
-        "reason": "high percentage of missing values",
-        "percentage": 1.0
+        "action": "fill",
+        "reason": "some values are missing",
+        "percentage": 0.23,
+        "filling": {
+          "mode": "2025-05-05"
+        }
       },
       {
-        "action": "mask",
-        "reason": "detected PII entities",
-        "guessed_entity": "PERSON",
-        "top_detected_entities": [
+        "action": "generalize",
+        "reason": "confirmed PII entity: DATE_TIME",
+        "gdpr_category": "Uncategorized",
+        "top_entities": [
           [
-            "PERSON",
-            2
+            "DATE_TIME",
+            20
           ]
-        ],
-        "percentage of PII": 100.0
+        ]
       },
       {
         "action": "enrich",
@@ -56,16 +215,88 @@
           "derive from related field",
           "add semantic tag"
         ]
-      },
-      {
-        "action": "categorize",
-        "reason": "Low uniqueness ratio (0.00) and unique count (0)",
-        "uniqueness_ratio": 0.0,
-        "unique_count": 0,
-        "example_categories": {}
       }
     ],
-    "llm": "We don t have recommendation for this column"
+    "llm": {
+      "text": "Some values are missing for the DATE_TIME column, so filling is recommended with a mode value such as '2025-05-05'. Additionally, the data shows that confirmed PII entities should never be filled. The most common detected entity is DATE_TIME (20 occurrences). A potential enrichment opportunity has been identified for this column: join external source, derive from related field, or add semantic tag.",
+      "value": {
+        "fill": {
+          "status": "accepted"
+        },
+        "generalize": {
+          "status": "accepted"
+        },
+        "enrich": {
+          "status": "accepted"
+        }
+      }
+    }
+  },
+  "LOCATION": {
+    "manual": [
+      {
+        "action": "fill",
+        "reason": "some values are missing",
+        "percentage": 0.47,
+        "filling": {
+          "mode": "1, chemin de Bazin, 07477 Rousset-sur-Maillet"
+        }
+      },
+      {
+        "action": "mask",
+        "reason": "confirmed PII entity: LOCATION",
+        "gdpr_category": "Uncategorized",
+        "top_entities": [
+          [
+            "PERSON",
+            15
+          ],
+          [
+            "DATE_TIME",
+            11
+          ],
+          [
+            "LOCATION",
+            4
+          ]
+        ]
+      }
+    ],
+    "llm": {
+      "text": "Some values are missing for the LOCATION column, so filling is recommended with a mode value such as '1, chemin de Bazin, 07477 Rousset-sur-Maillet'. However, it's important to note that confirmed PII entities should never be filled. The data shows that 47% of values are missing, and the most common detected entity is PERSON (15 occurrences).",
+      "value": {
+        "fill": {
+          "status": "rejected"
+        },
+        "mask": {
+          "status": "accepted"
+        }
+      }
+    }
+  },
+  "text_id": {
+    "manual": [
+      {
+        "action": "mask",
+        "reason": "detected PII entities",
+        "guessed_entity": "LOCATION",
+        "top_detected_entities": [
+          [
+            "LOCATION",
+            1
+          ]
+        ],
+        "percentage of PII": 0.33333333333333337
+      }
+    ],
+    "llm": {
+      "text": "The text_id column contains PII entities, specifically LOCATION (1 occurrence), which should be masked.",
+      "value": {
+        "mask": {
+          "status": "accepted"
+        }
+      }
+    }
   },
   "text": {
     "manual": [
@@ -76,89 +307,27 @@
         "top_detected_entities": [
           [
             "PERSON",
-            5
+            512
           ],
           [
-            "EMAIL_ADDRESS",
-            2
+            "DATE_TIME",
+            291
           ],
           [
             "CIN",
-            2
+            159
           ]
         ],
         "percentage of PII": 100.0
       }
     ],
-    "llm": "We don t have recommendation for this column"
-  },
-  "PERSON": {
-    "manual": [
-      {
-        "action": "mask",
-        "reason": "confirmed PII entity: PERSON",
-        "gdpr_category": "Uncategorized",
-        "top_entities": [
-          [
-            "PERSON",
-            2
-          ]
-        ]
+    "llm": {
+      "text": "The text column contains multiple confirmed PII entities: PERSON (512 occurrences), DATE_TIME (291 occurrences), and CIN (159 occurrences). It's essential to mask these entities.",
+      "value": {
+        "mask": {
+          "status": "accepted"
+        }
       }
-    ],
-    "llm": "We don t have recommendation for this column"
-  },
-  "ID_MAROC": {
-    "manual": [
-      {
-        "action": "mask",
-        "reason": "detected PII entities",
-        "guessed_entity": "CIN",
-        "top_detected_entities": [
-          [
-            "CIN",
-            2
-          ]
-        ],
-        "percentage of PII": 100.0
-      }
-    ],
-    "llm": "We don t have recommendation for this column"
-  },
-  "EMAIL_ADDRESS": {
-    "manual": [
-      {
-        "action": "mask",
-        "reason": "confirmed PII entity: EMAIL_ADDRESS",
-        "gdpr_category": "Uncategorized",
-        "top_entities": [
-          [
-            "EMAIL_ADDRESS",
-            2
-          ]
-        ]
-      }
-    ],
-    "llm": "We don t have recommendation for this column"
-  },
-  "LOCATION": {
-    "manual": [
-      {
-        "action": "mask",
-        "reason": "confirmed PII entity: LOCATION",
-        "gdpr_category": "Uncategorized",
-        "top_entities": [
-          [
-            "PERSON",
-            2
-          ],
-          [
-            "LOCATION",
-            1
-          ]
-        ]
-      }
-    ],
-    "llm": "We don t have recommendation for this column"
+    }
   }
 }

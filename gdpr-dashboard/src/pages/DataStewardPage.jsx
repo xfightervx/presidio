@@ -51,19 +51,40 @@ export default function DataStewardPage() {
     setError("");
     setStatusMsg("");
     setDownloadUrl(null);
-
     const form = new FormData();
     form.append("file", file);
-
     try {
       const res = await fetch("http://localhost:8000/recommend", {
         method: "POST",
         body: form,
       });
       if (!res.ok) throw new Error(`Server returned ${res.status}`);
-      const data = await res.json();
-      // New backend returns ONLY serialized format:
-      // { column: { manual: [...], llm: <string | {text, value}> } }
+      let data = await res.json();
+      // Normalize response to support both shapes:
+      // 1) New: { column: { manual: [...], llm: string | {text, value} } }
+      // 2) Old: { columns: {col: [...]}, llm: { steward_text, action_plan } }
+      if (data && typeof data === 'object' && data.columns && typeof data.columns === 'object') {
+        const normalized = {};
+        const cols = data.columns || {};
+        const llmBlock = data.llm || {};
+        const plan = llmBlock.action_plan || {};
+        const stewardText = llmBlock.steward_text || "";
+        Object.entries(cols).forEach(([col, manualList]) => {
+          const perColPlan = plan[col];
+          let llmVal = undefined;
+          if (perColPlan && typeof perColPlan === 'object') {
+            llmVal = { value: perColPlan };
+          } else if (llmBlock && typeof llmBlock === 'object' && llmBlock[col]) {
+            // some variants may have per-column llm text directly
+            llmVal = llmBlock[col];
+          } else {
+            llmVal = stewardText; // fallback shared text
+          }
+          normalized[col] = { manual: manualList, llm: llmVal };
+        });
+        data = normalized;
+      }
+
       const groupedData = {};
       const llmPlanData = {};
       Object.entries(data || {}).forEach(([col, entry]) => {
@@ -74,14 +95,26 @@ export default function DataStewardPage() {
             ? (Array.isArray(entry.manual) ? entry.manual : [entry.manual])
             : [];
         groupedData[col] = manual;
-        const rawLlm = entry.llm;
+        // Be resilient to different shapes/keys for llm data
+        const rawLlm = (
+          entry.llm !== undefined ? entry.llm :
+          entry.LLM !== undefined ? entry.LLM :
+          entry.llm_suggestion !== undefined ? entry.llm_suggestion :
+          (entry.llm_plan && (entry.llm_plan.text || entry.llm_plan.value || entry.llm_plan.summary)) !== undefined ? entry.llm_plan :
+          entry.suggestion !== undefined ? entry.suggestion :
+          undefined
+        );
         let text = "";
         let value = {};
         if (rawLlm && typeof rawLlm === 'object' && !Array.isArray(rawLlm)) {
-          text = rawLlm.text || "";
-          value = rawLlm.value || {};
+          // Accept common fields: text/summary/message and optional value/plan
+          text = rawLlm.text || rawLlm.summary || rawLlm.message || "";
+          value = rawLlm.value || rawLlm.plan || {};
         } else if (typeof rawLlm === 'string') {
           text = rawLlm;
+        } else if (rawLlm !== undefined) {
+          // last-resort: show raw as string
+          try { text = JSON.stringify(rawLlm); } catch { text = String(rawLlm); }
         }
         llmPlanData[col] = { text, value };
       });

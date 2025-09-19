@@ -1,58 +1,149 @@
 === PROMPT ===
+SYSTEM
+Return ONLY valid JSON (no Markdown fences, no text outside JSON).
+Top-level keys MUST be the exact column names.
+For each column, include:
+- "text": 2-6 sentences for the data steward. Mention missingness if given, but for PII/identifiers missingness is informational only and does NOT justify filling.
+- "value": object with ONLY the actions that were proposed for that column. For each action:
+   {"status": "accepted"|"rejected", "value": <string|null>}
+The output schema is:
+{
+  "<COLUMN>": {
+    "text": {<the recommendation as a comprehensible text>},
+    "value": {
+        "<action>": {"status":"accepted"|"rejected", "value":<str|null>},
+        ...
+    }
+  },
+  ...
+}
+Rules:
+- ALLOWED_ACTIONS = {fill, mask, generalize, drop, categorize, enrich, keep}
+- PII/identifiers: PERSON, EMAIL_ADDRESS, PHONE_NUMBER, CIN, ID_MAROC, IBAN_CODE, LOCATION, DATE_TIME
+- Prefer mask/generalize for PII/identifiers. Never suggest filling with names/emails/numbers or fabricated identities.
+- Exactly ONE action per column should be "accepted"; others must be "rejected".
+- "value" meaning:
+   • fill → "median"|"mean"|"mode"|approved placeholder string (only for non-PII)
+   • generalize → "year"|"month" etc.
+   • mask/drop/categorize/enrich → usually null
+- Do not invent actions that were not proposed for that column.
+- If information is insufficient, be conservative and state that in "text".
+- You will be provided next we a glossary of PII s and SII s be sure to include them as a reason for your decision.
+{
+  "VERSION": "2025-09-16",
+  "DEFINITIONS": {
+    "PII": "Personal data that can identify or relate to an individual but is not a GDPR Article 9 special category. Requires lawful basis, minimization, and security.",
+    "SII": "Sensitive/special-category personal data (GDPR Art. 9) requiring an additional Article 9(2) condition. In Morocco (Law 09-08), 'données sensibles' typically need CNDP prior authorization."
+  },
+  "ALIASES": {
+    "MIBAN_CODE": "IBAN_CODE"
+  },
+  "ENTITIES": {
+    "PERSON":              {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "EMAIL_ADDRESS":       {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "PHONE_NUMBER":        {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "LOCATION":            {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "mask"},
+    "POSTAL_CODE":         {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "generalize"},
+    "DATE_TIME":           {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "generalize"},
+    "DATE_OF_BIRTH":       {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "generalize"},
+    "AGE":                 {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "low",    "default_action": "generalize"},
+    "JOB_TITLE":           {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "mask"},
+    "NATIONALITY":         {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "mask"},
 
-{'IBAN_CODE': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 1.0}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 2)], 'percentage of PII': 100.0}, {'action': 'categorize', 'reason': 'Low uniqueness ratio (0.00) and unique count (0)', 'uniqueness_ratio': 0.0, 'unique_count': 0, 'example_categories': {}}], 'DATE_TIME': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 1.0}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 2)], 'percentage of PII': 100.0}, {'action': 'enrich', 'reason': 'header matches enrichable cluster', 'cluster': 2, 'suggestions': ['join external source', 'derive from related field', 'add semantic tag']}, {'action': 'categorize', 'reason': 'Low uniqueness ratio (0.00) and unique count (0)', 'uniqueness_ratio': 0.0, 'unique_count': 0, 'example_categories': {}}], 'text': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 5), ('EMAIL_ADDRESS', 2), ('CIN', 2)], 'percentage of PII': 100.0}], 'PERSON': [{'action': 'mask', 'reason': 'confirmed PII entity: PERSON', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 2)]}], 'ID_MAROC': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'CIN', 'top_detected_entities': [('CIN', 2)], 'percentage of PII': 100.0}], 'EMAIL_ADDRESS': [{'action': 'mask', 'reason': 'confirmed PII entity: EMAIL_ADDRESS', 'gdpr_category': 'Uncategorized', 'top_entities': [('EMAIL_ADDRESS', 2)]}], 'LOCATION': [{'action': 'mask', 'reason': 'confirmed PII entity: LOCATION', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 2), ('LOCATION', 1)]}]}
+    "CIN":                 {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "ID_MAROC":            {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "PASSPORT":            {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "DRIVER_LICENSE":      {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "INSURANCE_NUMBER":    {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "INTERNAL_ID":         {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "medium", "default_action": "tokenize"},
+
+    "IBAN_CODE":           {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "BANK_ACCOUNT":        {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "high",   "default_action": "mask"},
+    "CREDIT_CARD":         {"category": "PII", "gdpr": {"special_category": false}, "ma_0908": {"sensitive": false, "authorization_required": false}, "risk": "critical","default_action": "mask"},
+
+    "HEALTH_DATA":         {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "MEDICAL_CONDITION":   {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "BLOOD_TYPE":          {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "GENETIC_DATA":        {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "BIOMETRIC_DATA_ID":   {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"},
+    "RACIAL_ETHNIC_ORIGIN":{"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "POLITICAL_OPINION":   {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "RELIGIOUS_BELIEF":    {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "TRADE_UNION_MEMBERSHIP":{"category": "SII","gdpr": {"special_category": true}, "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "high",   "default_action": "mask"},
+    "SEXUAL_ORIENTATION":  {"category": "SII", "gdpr": {"special_category": true},  "ma_0908": {"sensitive": true,  "authorization_required": true},  "risk": "critical","default_action": "mask"}
+  }
+}
+INPUT
+{'PERSON': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.23, 'filling': {'mode': 'Vincent'}}, {'action': 'mask', 'reason': 'confirmed PII entity: PERSON', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 26)]}], 'ID_MAROC': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.47, 'filling': {'mode': 'AC05974'}}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'CIN', 'top_detected_entities': [('CIN', 159), ('PERSON', 6), ('LOCATION', 2)], 'percentage of PII': 53.0}], 'PHONE_NUMBER': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.53, 'filling': {'mean': 106581718463.75887, 'median': 9847088151.0, 'max': 212699238922.0, 'min': 388356267.0}}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'UK_NHS', 'top_detected_entities': [('UK_NHS', 7)], 'percentage of PII': 2.3333333333333335}], 'EMAIL_ADDRESS': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 0.77}, {'action': 'mask', 'reason': 'confirmed PII entity: EMAIL_ADDRESS', 'gdpr_category': 'Uncategorized', 'top_entities': [('EMAIL_ADDRESS', 10)]}], 'IBAN_CODE': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 0.76}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'IBAN_CODE', 'top_detected_entities': [('IBAN_CODE', 72), ('PERSON', 6), ('MEDICAL_LICENSE', 4)], 'percentage of PII': 24.0}], 'DATE_TIME': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.23, 'filling': {'mode': '2025-05-05'}}, {'action': 'generalize', 'reason': 'confirmed PII entity: DATE_TIME', 'gdpr_category': 'Uncategorized', 'top_entities': [('DATE_TIME', 20)]}, {'action': 'enrich', 'reason': 'header matches enrichable cluster', 'cluster': 2, 'suggestions': ['join external source', 'derive from related field', 'add semantic tag']}], 'LOCATION': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.47, 'filling': {'mode': '1, chemin de Bazin, 07477 Rousset-sur-Maillet'}}, {'action': 'mask', 'reason': 'confirmed PII entity: LOCATION', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 15), ('DATE_TIME', 11), ('LOCATION', 4)]}], 'text_id': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'LOCATION', 'top_detected_entities': [('LOCATION', 1)], 'percentage of PII': 0.33333333333333337}], 'text': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 512), ('DATE_TIME', 291), ('CIN', 159)], 'percentage of PII': 100.0}]}
 
 ===GROUPED===
-{'IBAN_CODE': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 1.0}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 2)], 'percentage of PII': 100.0}, {'action': 'categorize', 'reason': 'Low uniqueness ratio (0.00) and unique count (0)', 'uniqueness_ratio': 0.0, 'unique_count': 0, 'example_categories': {}}], 'DATE_TIME': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 1.0}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 2)], 'percentage of PII': 100.0}, {'action': 'enrich', 'reason': 'header matches enrichable cluster', 'cluster': 2, 'suggestions': ['join external source', 'derive from related field', 'add semantic tag']}, {'action': 'categorize', 'reason': 'Low uniqueness ratio (0.00) and unique count (0)', 'uniqueness_ratio': 0.0, 'unique_count': 0, 'example_categories': {}}], 'text': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 5), ('EMAIL_ADDRESS', 2), ('CIN', 2)], 'percentage of PII': 100.0}], 'PERSON': [{'action': 'mask', 'reason': 'confirmed PII entity: PERSON', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 2)]}], 'ID_MAROC': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'CIN', 'top_detected_entities': [('CIN', 2)], 'percentage of PII': 100.0}], 'EMAIL_ADDRESS': [{'action': 'mask', 'reason': 'confirmed PII entity: EMAIL_ADDRESS', 'gdpr_category': 'Uncategorized', 'top_entities': [('EMAIL_ADDRESS', 2)]}], 'LOCATION': [{'action': 'mask', 'reason': 'confirmed PII entity: LOCATION', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 2), ('LOCATION', 1)]}]}
+{'PERSON': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.23, 'filling': {'mode': 'Vincent'}}, {'action': 'mask', 'reason': 'confirmed PII entity: PERSON', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 26)]}], 'ID_MAROC': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.47, 'filling': {'mode': 'AC05974'}}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'CIN', 'top_detected_entities': [('CIN', 159), ('PERSON', 6), ('LOCATION', 2)], 'percentage of PII': 53.0}], 'PHONE_NUMBER': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.53, 'filling': {'mean': 106581718463.75887, 'median': 9847088151.0, 'max': 212699238922.0, 'min': 388356267.0}}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'UK_NHS', 'top_detected_entities': [('UK_NHS', 7)], 'percentage of PII': 2.3333333333333335}], 'EMAIL_ADDRESS': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 0.77}, {'action': 'mask', 'reason': 'confirmed PII entity: EMAIL_ADDRESS', 'gdpr_category': 'Uncategorized', 'top_entities': [('EMAIL_ADDRESS', 10)]}], 'IBAN_CODE': [{'action': 'drop', 'reason': 'high percentage of missing values', 'percentage': 0.76}, {'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'IBAN_CODE', 'top_detected_entities': [('IBAN_CODE', 72), ('PERSON', 6), ('MEDICAL_LICENSE', 4)], 'percentage of PII': 24.0}], 'DATE_TIME': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.23, 'filling': {'mode': '2025-05-05'}}, {'action': 'generalize', 'reason': 'confirmed PII entity: DATE_TIME', 'gdpr_category': 'Uncategorized', 'top_entities': [('DATE_TIME', 20)]}, {'action': 'enrich', 'reason': 'header matches enrichable cluster', 'cluster': 2, 'suggestions': ['join external source', 'derive from related field', 'add semantic tag']}], 'LOCATION': [{'action': 'fill', 'reason': 'some values are missing', 'percentage': 0.47, 'filling': {'mode': '1, chemin de Bazin, 07477 Rousset-sur-Maillet'}}, {'action': 'mask', 'reason': 'confirmed PII entity: LOCATION', 'gdpr_category': 'Uncategorized', 'top_entities': [('PERSON', 15), ('DATE_TIME', 11), ('LOCATION', 4)]}], 'text_id': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'LOCATION', 'top_detected_entities': [('LOCATION', 1)], 'percentage of PII': 0.33333333333333337}], 'text': [{'action': 'mask', 'reason': 'detected PII entities', 'guessed_entity': 'PERSON', 'top_detected_entities': [('PERSON', 512), ('DATE_TIME', 291), ('CIN', 159)], 'percentage of PII': 100.0}]}
 
 === RAW ===
-Here's the recommended JSON output based on the given input data and the rules provided:
-
-```
+```json
 {
-    "IBAN_CODE": {
-        "text": "High percentage of missing values (100%) suggests dropping this column, but since it is a PII entity, it should be masked instead.",
-        "value": {
-            "mask": {"status":"accepted", "value":null}
-        }
-    },
-    "DATE_TIME": {
-        "text": "High percentage of missing values (100%) suggests dropping this column, but since it is a PII entity, it should be masked instead. Additionally, there's an opportunity to enrich the data by joining external sources or deriving from related fields.",
-        "value": {
-            "mask": {"status":"accepted", "value":null},
-            "enrich": {"status":"rejected", "value":null}
-        }
-    },
-    "text": {
-        "text": "Detected multiple PII entities: PERSON (5), EMAIL_ADDRESS (2), CIN (2). Consider masking these entities to maintain privacy.",
-        "value": {
-            "mask": {"status":"accepted", "value":null}
-        }
-    },
-    "PERSON": {
-        "text": "Confirmed PII entity: PERSON. Mask this data to maintain privacy.",
-        "value": {
-            "mask": {"status":"accepted", "value":null}
-        }
-    },
-    "ID_MAROC": {
-        "text": "Detected PII entities, top guessed entity is CIN. Mask this data to maintain privacy.",
-        "value": {
-            "mask": {"status":"accepted", "value":null}
-        }
-    },
-    "EMAIL_ADDRESS": {
-        "text": "Confirmed PII entity: EMAIL_ADDRESS. Mask this data to maintain privacy.",
-        "value": {
-            "mask": {"status":"accepted", "value":null}
-        }
-    },
-    "LOCATION": {
-        "text": "Confirmed PII entity: LOCATION. Since it is also associated with the PERSON entity, mask this data to maintain privacy.",
-        "value": {
-            "mask": {"status":"accepted", "value":null}
-        }
+  "PERSON": {
+    "text": "Some values are missing for the PERSON column, so filling is recommended with a mode value such as 'Vincent'. However, it's important to note that confirmed PII entities should never be filled. The data shows that 23% of values are missing, and the most common entity detected is PERSON (26 occurrences).",
+    "value": {
+      "fill": {"status": "rejected"},
+      "mask": {"status": "accepted"}
     }
+  },
+  "ID_MAROC": {
+    "text": "Both filling and masking have been proposed for the ID_MAROC column due to missing values (47%). However, given that this is a PII entity requiring CNDP prior authorization, we recommend masking it. The most frequent detected entities are ID_MAROC (159 occurrences) and CIN (159 occurrences), with a high percentage of PII (53%).",
+    "value": {
+      "fill": {"status": "rejected"},
+      "mask": {"status": "accepted"}
+    }
+  },
+  "PHONE_NUMBER": {
+    "text": "Some values are missing for the PHONE_NUMBER column, so filling is recommended using the mean (106581718463.75887), median (9847088151.0), max (212699238922.0), or min (388356267.0). However, it's important to note that confirmed PII entities should never be filled. The data shows that 53% of values are missing, and the most common entity detected is UK_NHS (7 occurrences), which may not be relevant to our dataset.",
+    "value": {
+      "fill": {"status": "rejected"},
+      "mask": {"status": "accepted"}
+    }
+  },
+  "EMAIL_ADDRESS": {
+    "text": "Given the high percentage of missing values (77%), it's recommended to drop this column. Additionally, confirmed PII entities should never be dropped. The data shows that the most common detected entity is EMAIL_ADDRESS (10 occurrences).",
+    "value": {
+      "drop": {"status": "accepted"},
+      "mask": {"status": "accepted"}
+    }
+  },
+  "IBAN_CODE": {
+    "text": "Both filling and masking have been proposed for the IBAN_CODE column due to missing values (76%). However, given that this is a PII entity requiring CNDP prior authorization, we recommend masking it. The most frequent detected entities are IBAN_CODE (72 occurrences) and PERSON (6 occurrences), with a high percentage of PII (24%).",
+    "value": {
+      "fill": {"status": "rejected"},
+      "mask": {"status": "accepted"}
+    }
+  },
+  "DATE_TIME": {
+    "text": "Some values are missing for the DATE_TIME column, so filling is recommended with a mode value such as '2025-05-05'. Additionally, the data shows that confirmed PII entities should never be filled. The most common detected entity is DATE_TIME (20 occurrences). A potential enrichment opportunity has been identified for this column: join external source, derive from related field, or add semantic tag.",
+    "value": {
+      "fill": {"status": "accepted"},
+      "generalize": {"status": "accepted"},
+      "enrich": {"status": "accepted"}
+    }
+  },
+  "LOCATION": {
+    "text": "Some values are missing for the LOCATION column, so filling is recommended with a mode value such as '1, chemin de Bazin, 07477 Rousset-sur-Maillet'. However, it's important to note that confirmed PII entities should never be filled. The data shows that 47% of values are missing, and the most common detected entity is PERSON (15 occurrences).",
+    "value": {
+      "fill": {"status": "rejected"},
+      "mask": {"status": "accepted"}
+    }
+  },
+  "text_id": {
+    "text": "The text_id column contains PII entities, specifically LOCATION (1 occurrence), which should be masked.",
+    "value": {
+      "mask": {"status": "accepted"}
+    }
+  },
+  "text": {
+    "text": "The text column contains multiple confirmed PII entities: PERSON (512 occurrences), DATE_TIME (291 occurrences), and CIN (159 occurrences). It's essential to mask these entities.",
+    "value": {
+      "mask": {"status": "accepted"}
+    }
+  }
 }
 ```
 
